@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2025 FairPhone B.V.
+  ~
+  ~ SPDX-FileCopyrightText: 2025. FairPhone B.V.
+  ~
+  ~ SPDX-License-Identifier: EUPL-1.2
+  -->
+
+<resources>
+    <string name="default_profile_name">Essentiels</string>
+    <string name="setting_title_visible_apps">Applications visibles</string>
+    <string name="setting_title_visible_apps_selector">Sélectionnez les applications visibles</string>
+    <string name="setting_title_allowed_contacts">Contacts autorisés</string>
+    <string name="setting_title_allowed_apps">Applications autorisées</string>
+    <string name="setting_title_customization_settings">Paramètres de personnalisation</string>
+    <string name="setting_header_allowed_contacts">Qui peut vous contacter pendant que vous êtes dans le moment %1$s?</string>
+    <string name="profile_state_active">Actif</string>
+    <string name="visible_apps_count">%1$d / %2$d sélectionnés</string>
+    <string name="visible_apps_error_empty_selected">Choisissez au moins une application</string>
+    <string name="visible_apps_error_max_selected">%1$d / %1$d sélectionnés</string>
+    <string name="bt_confirm">Confirmer</string>
+    <string name="profile_name_editor_title">Renommer le moment</string>
+    <string name="profile_name_max_length_error">Gardez le nom de votre moment sous 15 caractères</string>
+    <string name="search_app_info_bar_placeholder">Rechercher des applications</string>
+    <string name="search_contact_info_bar_placeholder">Rechercher les contacts</string>
+    <string name="people_type_everyone">Tout le monde</string>
+    <string name="people_type_none">Personne</string>
+    <string name="people_type_all_contacts">Tous les contacts</string>
+    <string name="people_type_starred">Uniquement les contacts favoris</string>
+    <string name="people_type_custom">Choisir</string>
+    <string name="setting_title_appearance">Personnaliser l\'apparence</string>
+    <string name="setting_title_sound_and_vibration">Son et vibration</string>
+    <string name="setting_title_power_saving">Paramètres d\'économie d\'énergie</string>
+    <string name="setting_subtitle_sound_and_vibration">Faire correspondre au paramètres de l\'appareil</string>
+    <string name="setting_subtitle_power_saving">Économisez de l\'énergie et prolongez la durée de vie de votre batterie</string>
+    <string name="setting_subtitle_appearance">Changez l\'apparence à votre guise</string>
+    <string name="setting_subtitle_notification">Aucun autorisé</string>
+    <string name="setting_header_visible_apps">Organisez l\'ordre des applications sur votre écran</string>
+    <string name="bt_create_moment">Créer un moment</string>
+    <string name="bt_switch_to_profile">Passer à ce moment</string>
+    <string name="bt_cancel">Annuler</string>
+    <string name="bt_change_apps">Changer d\'application</string>
+    <string name="mode_switcher_screen_header">Quel est votre prochain moment ?</string>
+    <string name="setting_title_notification">Paramètres de notification d\'application</string>
+    <string name="setting_button_delete_mode_not_allowed">Ce Moment est unique. Il ne peut pas être supprimé.</string>
+    <string name="profile_switch_state_enabled">%1$s\nactivé</string>
+    <string name="profile_switch_state_disabled">%1$s\ndésactivé</string>
+    <string name="do_not_disturb_access_rationale_title">Accès Ne pas déranger requis</string>
+    <string name="do_not_disturb_access_rationale_text">Fairphone Moments a besoin de l\'accès à Ne pas déranger pour fonctionner correctement. Autorisez l\'accès dans vos paramètres.</string>
+    <string name="moments_demo_card_text">Ce Fairphone (Gen. 6) exécute actuellement Fairphone Moments, une nouvelle façon d\'utiliser votre téléphone. Revenez à Android standard avec l\'interrupteur vert sur le côté droit. Ou cliquez ici pour en savoir plus.</string>
+    <string name="close">Fermer</string>
+    <string name="no_internet_connection">Pas de connexion Internet</string>
+    <string name="bt_navigate_back">Retour</string>
+    <string name="bt_navigation_close">Fermer</string>
+    <string name="bt_continue">Continuer</string>
+    <string name="setting_delete_mode_confirm">Êtes-vous sûr de vouloir supprimer ce mode ?</string>
+    <string name="add_mode_screen_header">Quel mode souhaitez-vous créer ?</string>
+    <string name="choose_app_screen_header">Choisissez jusqu\'à 5 applications à afficher dans votre Moment</string>
+    <string name="choose_app_screen_subtitle">Voici les applications que vous verrez. Les appels téléphoniques continueront d\'être traités normalement.</string>
+    <string name="choose_app_background_header">Choisir un arrière plan</string>
+    <string name="name_mode_screen_header">Nommez votre moment</string>
+    <string name="mode_title_essential">Essentiels</string>
+    <string name="mode_title_quality_time">Du temps de qualité</string>
+    <string name="mode_title_deep_focus">Focus</string>
+    <string name="mode_title_custom">Paramètre personnalisé</string>
+    <string name="mode_title_journey">Voyage</string>
+    <string name="mode_title_recharge">Recharger</string>
+    <string name="mode_subtitle_quality_time">Donnez la priorité à votre corps et à votre esprit</string>
+    <string name="mode_subtitle_deep_focus">Libérez votre potentiel en éliminant les distractions</string>
+    <string name="mode_subtitle_custom">Commencez à partir de zéro et personnalisez le mode en fonction de vos besoins</string>
+    <string name="mode_subtitle_journey">Concentrez-vous sur la route devant vous</string>
+    <string name="mode_subtitle_recharge">Réveillez-vous frais et dispos et prêt pour une nouvelle journée, chaque jour</string>
+    <string name="setting_button_delete_mode">Supprimer le mode</string>
+    <string name="onboarding_home_button_help">Appuyez pour personnaliser\n votre Moment.</string>
+    <string name="bt_apply_changes">Appliquer les modifications</string>
+    <string name="onboarding_home_tooltitp">Changez de moment et modifiez les paramètres.</string>
+    <string name="setting_notifications_select_allowed">Sélectionner les notifications autorisées</string>
+    <string name="setting_notifications_app">Notifications d\'application</string>
+    <string name="setting_notifications_none">Aucune autorisée</string>
+    <string name="setting_notifications_allow_repeat_caller">Autoriser les appels répétés</string>
+    <string name="setting_notifications_allow_repeat_caller_desc">Quelqu\'un qui appelle plusieurs fois dans un délai de 15 minutes</string>
+    <plurals name="setting_notifications_nb_allowed">
+        <item quantity="one">%1$d autorisée</item>
+        <item quantity="other">%1$d autorisées</item>
+        <item quantity="many">%1$d autorisées</item>
+    </plurals>
+    <string name="app_notifications_permission_header">Autorisations</string>
+    <string name="app_notifications_permission_text">Pour que ce paramètre fonctionne, Fairphone Moments doit avoir les autorisations pour filtrer et republier vos notifications</string>
+    <string name="permission_toggle_title_notification_access">Lire les notifications</string>
+    <string name="permission_toggle_subtitle_notification_access">Autorisation de lire l\'origine de vos notifications</string>
+    <string name="permission_toggle_title_post_notification">Publier des notifications</string>
+    <string name="permission_toggle_subtitle_post_notification">Autorisation de republier les notifications filtrées</string>
+    <string name="wallpaper">Fond d\'écran</string>
+    <string name="update_wallpaper">Changer le fond d\'écran</string>
+    <string name="maximum_moments_reached_label">Vous avez atteint le nombre maximal de moments</string>
+
+    <string name="sound_and_vibration_title">Son et vibrations</string>
+    <string name="sound_and_vibration_description">Modifiez les paramètres de son et de vibrations de votre appareil selon vos préférences.</string>
+    <string name="sound_and_vibration_match_title">Adapter les paramètres de l\'appareil.</string>
+    <string name="sound_and_vibration_match_subtitle">Suivez les paramètres actuels de votre appareil.</string>
+    <string name="sound_and_vibration_loud_title">Fort</string>
+    <string name="sound_and_vibration_loud_subtitle">Lancez tous les sons au volume maximum.</string>
+    <string name="sound_and_vibration_vibrate_title">Vibreur</string>
+    <string name="sound_and_vibration_vibrate_subtitle">Couper les sons et activer uniquement les vibrations.</string>
+    <string name="sound_and_vibration_silent_title">Silence</string>
+    <string name="sound_and_vibration_silent_subtitle">Désactiver tous les sons et les vibrations.</string>
+
+    <string name="setting_blue_light_filter_title">Filtre de lumière bleue</string>
+    <string name="setting_blue_light_filter_descritpion">Rend l\'écran plus agréable pour vos yeux la nuit</string>
+    <string name="setting_grayscale_title">Niveaux de gris</string>
+    <string name="setting_grayscale_description">Active le mode noir et blanc sur votre écran.</string>
+</resources>

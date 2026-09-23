@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2025 FairPhone B.V.
+  ~
+  ~ SPDX-FileCopyrightText: 2025. FairPhone B.V.
+  ~
+  ~ SPDX-License-Identifier: EUPL-1.2
+  -->
+
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background" />
+    <foreground>
+        <inset
+            android:drawable="@drawable/ic_launcher_foreground"
+            android:inset="20%" />
+    </foreground>
+    <monochrome>
+        <inset
+            android:drawable="@drawable/ic_launcher_monochrome"
+            android:inset="20%" />
+    </monochrome>
+</adaptive-icon>

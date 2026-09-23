@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2025 FairPhone B.V.
+  ~
+  ~ SPDX-FileCopyrightText: 2025. FairPhone B.V.
+  ~
+  ~ SPDX-License-Identifier: EUPL-1.2
+  -->
+
+<resources>
+    <string name="default_profile_name">Essentials</string>
+    <string name="mode_title_essential">Essentials</string>
+    <string name="mode_title_quality_time">Quality Time</string>
+    <string name="mode_title_deep_focus">Deep focus</string>
+    <string name="mode_title_custom">Custom</string>
+    <string name="mode_title_journey">Journey</string>
+    <string name="mode_title_recharge">Recharge</string>
+    <string name="setting_title_visible_apps">Synliga appar</string>
+    <string name="setting_title_visible_apps_selector">Välj synliga appar</string>
+    <string name="setting_title_allowed_contacts">Tillåtna kontakter</string>
+    <string name="setting_title_allowed_apps">Tillåtna appar</string>
+    <string name="setting_title_customization_settings">Anpassningsinställningar</string>
+    <string name="setting_header_allowed_contacts">Vem kan nå ut till dig när du är i %1$s moment?</string>
+    <string name="profile_state_active">Aktiv</string>
+    <string name="visible_apps_count">%1$d / %2$d vald</string>
+    <string name="visible_apps_error_empty_selected">Välj minst en app</string>
+    <string name="visible_apps_error_max_selected">%1$d / %1$d vald</string>
+    <string name="bt_confirm">Bekräfta</string>
+    <string name="profile_name_editor_title">Byt namn på ögonblick</string>
+    <string name="profile_name_max_length_error">Håll ditt ögonblicksnamn under 15 tecken</string>
+    <string name="search_app_info_bar_placeholder">Sök appar</string>
+    <string name="search_contact_info_bar_placeholder">Sök kontakter</string>
+    <string name="people_type_everyone">Alla</string>
+    <string name="people_type_none">Ingen</string>
+    <string name="people_type_all_contacts">Alla kontakter</string>
+    <string name="people_type_starred">Endast stjärnmärkta kontakter</string>
+    <string name="people_type_custom">Välja</string>
+    <string name="setting_subtitle_notification">Ingen tillåten</string>
+    <string name="setting_header_visible_apps">Ordna apparnas ordning på skärmen</string>
+    <string name="bt_create_moment">Skapa ögonblick</string>
+    <string name="bt_switch_to_profile">Växla till detta ögonblick</string>
+    <string name="bt_cancel">Annullera</string>
+    <string name="bt_change_apps">Byt appar</string>
+    <string name="mode_switcher_screen_header">Vad är ditt nästa ögonblick?</string>
+    <string name="setting_title_notification">Inställningar för appaviseringar</string>
+    <string name="setting_title_appearance">Anpassa utseendet</string>
+    <string name="setting_title_sound_and_vibration">Ljud &amp; vibration</string>
+    <string name="setting_title_power_saving">Energisparinställningar</string>
+    <string name="setting_subtitle_sound_and_vibration">Matcha enhetsinställningar</string>
+    <string name="setting_subtitle_power_saving">Spara ström och förläng batteritiden</string>
+    <string name="setting_subtitle_appearance">Ändra utseendet efter din smak</string>
+    <string name="setting_button_delete_mode_not_allowed">Detta är ditt enda ögonblick. Det går inte att radera.</string>
+    <string name="profile_switch_state_enabled">%1$s\naktiverat</string>
+    <string name="profile_switch_state_disabled">%1$s\navaktiverat</string>
+    <string name="do_not_disturb_access_rationale_title">Behörighet till Stör ej krävs</string>
+    <string name="do_not_disturb_access_rationale_text">Fairphone Moments behöver åtkomst till Stör ej för att fungera korrekt. Tillåt åtkomst i dina inställningar.</string>
+    <string name="moments_demo_card_text">Denna Fairphone (Gen. 6) kör för närvarande Fairphone Moments, ett nytt sätt att använda din telefon. Byt tillbaka till vanlig Android med lime switchen på sidan. Eller klicka här för att lära dig mer.</string>
+    <string name="close">Stäng</string>
+    <string name="no_internet_connection">Ingen internetanslutning</string>
+    <string name="bt_navigate_back">Tillbaka</string>
+    <string name="bt_navigation_close">Nära</string>
+    <string name="bt_continue">Fortsätta</string>
+    <string name="setting_delete_mode_confirm">Är du säker på att du vill ta bort det här läget?</string>
+    <string name="add_mode_screen_header">Vilket läge vill du skapa?</string>
+    <string name="choose_app_screen_header">Välj upp till 5 appar att visa i Ditt ögonblick</string>
+    <string name="choose_app_screen_subtitle">Det här är apparna du kommer att se. Telefonsamtal kommer fortfarande fram som vanligt.</string>
+    <string name="choose_app_background_header">Välj en bakgrund</string>
+    <string name="name_mode_screen_header">Namnge ditt ögonblick</string>
+    <string name="mode_subtitle_quality_time">Prioritera din kropp och ditt sinne</string>
+    <string name="mode_subtitle_deep_focus">Frigör din potential genom att stänga ute distraktioner</string>
+    <string name="mode_subtitle_custom">Börja tomt och anpassa läget efter dina behov</string>
+    <string name="mode_subtitle_journey">Fokusera på vägen framåt</string>
+    <string name="mode_subtitle_recharge">Vakna upp utvilad och redo för en ny dag, varje dag</string>
+    <string name="setting_button_delete_mode">Ta bort läget</string>
+    <string name="onboarding_home_button_help">Tryck för att anpassa\n ditt ögonblick.</string>
+    <string name="bt_apply_changes">Tillämpa ändringar</string>
+    <string name="onboarding_home_tooltitp">Byt ögonblick och ändra inställningar.</string>
+
+    <string name="setting_notifications_select_allowed">Välj tillåtna aviseringar</string>
+    <string name="setting_notifications_app">Appaviseringar</string>
+    <string name="setting_notifications_none">Inga tillåtna</string>
+    <string name="setting_notifications_allow_repeat_caller">Tillåt upprepade uppringare</string>
+    <string name="setting_notifications_allow_repeat_caller_desc">Någon som ringer flera gånger inom en 15-minutersperiod</string>
+    <plurals name="setting_notifications_nb_allowed">
+        <item quantity="one">%1$d tillåten</item>
+        <item quantity="other">%1$d tillåtna</item>
+    </plurals>
+    <string name="app_notifications_permission_header">Behörigheter</string>
+    <string name="app_notifications_permission_text">För att den här inställningen ska fungera måste Fairphone Moments ha behörighet att filtrera och återpublicera dina aviseringar</string>
+    <string name="permission_toggle_title_notification_access">Läs aviseringar</string>
+    <string name="permission_toggle_subtitle_notification_access">Behörighet att läsa ursprunget för dina aviseringar</string>
+    <string name="permission_toggle_title_post_notification">Publicera aviseringar</string>
+    <string name="permission_toggle_subtitle_post_notification">Behörighet att återpublicera de filtrerade aviseringarna</string>
+    <string name="wallpaper">Tapet</string>
+    <string name="update_wallpaper">Uppdatera Bakgrund</string>
+    <string name="maximum_moments_reached_label">Du har nått det maximala antalet ögonblick</string>
+
+    <string name="sound_and_vibration_title">Ljud och vibration</string>
+    <string name="sound_and_vibration_description">Åsidosätt enhetens ljud- och vibrationsinställningar baserat på dina önskemål</string>
+    <string name="sound_and_vibration_match_title">Matcha enhetsinställningar</string>
+    <string name="sound_and_vibration_match_subtitle">Följ enhetens aktuella inställningar</string>
+    <string name="sound_and_vibration_loud_title">Högt</string>
+    <string name="sound_and_vibration_loud_subtitle">Spela upp alla ljud på maximal volym</string>
+    <string name="sound_and_vibration_vibrate_title">Vibrera</string>
+    <string name="sound_and_vibration_vibrate_subtitle">Stäng av ljud och aktivera endast vibration</string>
+    <string name="sound_and_vibration_silent_title">Tyst</string>
+    <string name="sound_and_vibration_silent_subtitle">Inaktivera alla ljud och vibrationer</string>
+
+    <string name="setting_blue_light_filter_title">Blått ljusfilter</string>
+    <string name="setting_blue_light_filter_descritpion">Gör skärmen skonsam för dina ögon på natten</string>
+    <string name="setting_grayscale_title">Gråskala</string>
+    <string name="setting_grayscale_description">Färginställningar för svartvitt på skärmen.</string>
+</resources>

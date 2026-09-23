@@ -1,0 +1,22 @@
+/*
+ * Copyright (C) 2025 FairPhone B.V.
+ *
+ * SPDX-FileCopyrightText: 2025. FairPhone B.V.
+ *
+ * SPDX-License-Identifier: EUPL-1.2
+ */
+
+package com.fairphone.spring.launcher.domain.usecase.profile
+
+import com.fairphone.spring.launcher.data.model.protos.LauncherProfile
+import com.fairphone.spring.launcher.data.repository.LauncherProfileRepository
+import com.fairphone.spring.launcher.domain.usecase.base.FlowUseCase
+import kotlinx.coroutines.flow.Flow
+
+class GetEditedProfileUseCase(
+    private val launcherProfileRepository: LauncherProfileRepository,
+) : FlowUseCase<Unit, LauncherProfile>() {
+    override fun execute(params: Unit): Flow<LauncherProfile> {
+        return launcherProfileRepository.getEditedProfile()
+    }
+}

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permission needed to access/modify DND policies -->
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <!-- Permission needed to display overlay on top of other activities -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- Permissions needed for network and demo mode -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permissions needed to change lockscreen wallpaper -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+
+    <!-- Permissions needed to host and bind application widgets -->
+    <uses-permission
+        android:name="android.permission.BIND_APPWIDGET"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Permissions needed to change audio settings -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <application
+        android:name="com.fairphone.spring.launcher.App"
+        android:allowBackup="true"
+        android:enableOnBackInvokedCallback="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SpringLauncher">
+
+        <activity
+            android:name="com.fairphone.spring.launcher.activity.SpringLauncherHomeActivity"
+            android:clearTaskOnLaunch="true"
+            android:enableOnBackInvokedCallback="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SpringLauncher.Home"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER_APP" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.fairphone.spring.launcher.activity.SwitchStateChangeActivity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="screenSize|keyboardHidden|screenLayout|orientation|layoutDirection|uiMode|colorMode"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="SwitchStateChange"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ActivityTransparent"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.fairphone.action.SHOW_SWITCH_BUTTON_HINT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.fairphone.spring.launcher.activity.LauncherSettingsActivity"
+            android:clearTaskOnLaunch="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="Moments Settings"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SpringLauncher.Settings"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.fairphone.action.SPRING_LAUNCHER_SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.fairphone.spring.launcher.activity.DoNotDisturbPermissionRationaleDialogActivity"
+            android:clearTaskOnLaunch="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ActivityTransparent"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+    </application>
+</manifest>

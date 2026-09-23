@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2025 FairPhone B.V.
+  ~
+  ~ SPDX-FileCopyrightText: 2025. FairPhone B.V.
+  ~
+  ~ SPDX-License-Identifier: EUPL-1.2
+  -->
+
+<resources>
+    <string name="default_profile_name">Essentials</string>
+    <string name="mode_title_essential">Essentials</string>
+    <string name="mode_title_quality_time">Quality Time</string>
+    <string name="mode_title_deep_focus">Deep focus</string>
+    <string name="mode_title_custom">Custom</string>
+    <string name="mode_title_journey">Journey</string>
+    <string name="mode_title_recharge">Recharge</string>
+    <string name="setting_title_visible_apps">Synlige apps</string>
+    <string name="setting_title_visible_apps_selector">Vælg synlige apps</string>
+    <string name="setting_title_allowed_contacts">Tilladte kontakter</string>
+    <string name="setting_title_allowed_apps">Tilladte apps</string>
+    <string name="setting_title_customization_settings">Tilpasningsindstillinger</string>
+    <string name="setting_header_allowed_contacts">Hvem kan nå ud til dig, mens du er i %1$s moment?</string>
+    <string name="profile_state_active">Aktiv</string>
+    <string name="visible_apps_count">%1$d / %2$d valgt</string>
+    <string name="visible_apps_error_empty_selected">Vælg mindst én app</string>
+    <string name="visible_apps_error_max_selected">%1$d / %1$d valgt</string>
+    <string name="bt_confirm">Bekræfte</string>
+    <string name="profile_name_editor_title">Omdøb øjeblik</string>
+    <string name="profile_name_max_length_error">Hold dit øjebliksnavn under 15 tegn</string>
+    <string name="search_app_info_bar_placeholder">Søg i apps</string>
+    <string name="search_contact_info_bar_placeholder">Søg kontakter</string>
+    <string name="people_type_everyone">Alle sammen</string>
+    <string name="people_type_none">Ingen</string>
+    <string name="people_type_all_contacts">Alle kontakter</string>
+    <string name="people_type_starred">Kun stjernemarkerede kontakter</string>
+    <string name="people_type_custom">Vælge</string>
+    <string name="setting_title_appearance">Tilpas udseende</string>
+    <string name="setting_title_sound_and_vibration">Lyd &amp; vibration</string>
+    <string name="setting_title_power_saving">Strømbesparende indstillinger</string>
+    <string name="setting_subtitle_sound_and_vibration">Match enhedsindstillinger</string>
+    <string name="setting_subtitle_power_saving">Spar strøm og forlænge din batterilevetid</string>
+    <string name="setting_subtitle_appearance">Skift udseendet til din smag</string>
+    <string name="setting_subtitle_notification">Ingen tilladt</string>
+    <string name="setting_header_visible_apps">Arranger rækkefølgen af apps på din skærm</string>
+    <string name="bt_create_moment">Skab et øjeblik</string>
+    <string name="bt_switch_to_profile">Skift til dette øjeblik</string>
+    <string name="bt_cancel">Ophæve</string>
+    <string name="bt_change_apps">Skift apps</string>
+    <string name="mode_switcher_screen_header">Hvad er dit næste øjeblik?</string>
+    <string name="setting_title_notification">Indstillinger for appbeskeder</string>
+    <string name="setting_button_delete_mode_not_allowed">Dette er dit eneste øjeblik. Det kan ikke slettes.</string>
+    <string name="setting_notifications_allow_repeat_caller_desc">En person, der ringer flere gange inden for en periode på 15 minutter</string>
+    <string name="profile_switch_state_enabled">%1$s\naktiveret</string>
+    <string name="profile_switch_state_disabled">"%1$s\ndeaktiveret "</string>
+    <string name="do_not_disturb_access_rationale_title">Adgang til Forstyr ikke kræves</string>
+    <string name="do_not_disturb_access_rationale_text">Fairphone Moments har brug for adgang til Forstyr ikke for at fungere korrekt. Giv adgang i dine indstillinger.</string>
+    <string name="moments_demo_card_text">This Fairphone (Gen. 6) is currently running Moments, a new way to use your phone.</string>
+    <string name="close">Luk</string>
+    <string name="no_internet_connection">Ingen internetforbindelse</string>
+    <string name="mode_subtitle_quality_time">Prioritér din krop og dit sind</string>
+    <string name="mode_subtitle_deep_focus">Frigør dit potentiale ved at lukke distraktioner ude</string>
+    <string name="mode_subtitle_custom">Start blankt og tilpas tilstanden til dine behov</string>
+    <string name="mode_subtitle_journey">Fokuser på vejen fremad</string>
+    <string name="mode_subtitle_recharge">Vågn op frisk og klar til en ny dag, hver dag</string>
+    <string name="choose_app_screen_header">Vælg op til 5 apps, der skal vises i dit øjeblik</string>
+    <string name="choose_app_screen_subtitle">Dette er de apps, du vil se. Telefonopkald vil stadig komme igennem som normalt.</string>
+    <string name="choose_app_background_header">Vælg en baggrund</string>
+    <string name="name_mode_screen_header">Navngiv dit øjeblik</string>
+    <string name="bt_navigate_back">Tilbage</string>
+    <string name="bt_navigation_close">Tæt</string>
+    <string name="bt_continue">Fortsætte</string>
+    <string name="setting_delete_mode_confirm">Er du sikker på, at du vil slette denne tilstand?</string>
+    <string name="add_mode_screen_header">Hvilken tilstand vil du gerne oprette?</string>
+    <string name="setting_button_delete_mode">Slet tilstanden</string>
+    <string name="onboarding_home_button_help">Tryk for at tilpasse\n dit øjeblik.</string>
+    <string name="bt_apply_changes">Anvende ændringer</string>
+    <string name="onboarding_home_tooltitp">Skift øjeblikke og skift indstillinger.</string>
+    <string name="setting_notifications_select_allowed">Vælg tilladte notifikationer</string>
+    <string name="setting_notifications_app">App-notifikationer</string>
+    <string name="setting_notifications_allow_repeat_caller">Tillad gentagne opkald</string>
+    <string name="setting_notifications_none">Ingen tilladte</string>
+    <plurals name="setting_notifications_nb_allowed">
+        <item quantity="one">%1$d tilladt</item>
+        <item quantity="other">%1$d tilladt</item>
+    </plurals>
+    <string name="app_notifications_permission_header">Tilladelser</string>
+    <string name="app_notifications_permission_text">For at denne indstilling kan fungere, skal Fairphone Moments have tilladelse til at filtrere og genudsende dine notifikationer</string>
+    <string name="permission_toggle_title_notification_access">Læs notifikationer</string>
+    <string name="permission_toggle_subtitle_notification_access">Tilladelse til at læse oprindelsen af dine notifikationer</string>
+    <string name="permission_toggle_title_post_notification">Send notifikationer</string>
+    <string name="permission_toggle_subtitle_post_notification">Tilladelse til at genudsende de filtrerede notifikationer</string>
+    <string name="wallpaper">Tapet</string>
+    <string name="update_wallpaper">Opdater Baggrund</string>
+    <string name="maximum_moments_reached_label">Du har nået det maksimale antal øjeblikke</string>
+</resources>

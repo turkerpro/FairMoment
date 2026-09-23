@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2025 FairPhone B.V.
+  ~
+  ~ SPDX-FileCopyrightText: 2025. FairPhone B.V.
+  ~
+  ~ SPDX-License-Identifier: EUPL-1.2
+  -->
+
+<resources>
+    <string name="default_profile_name">Wesentliches</string>
+    <string name="mode_title_essential">Essentials</string>
+    <string name="mode_title_quality_time">Quality Time</string>
+    <string name="mode_title_deep_focus">Deep focus</string>
+    <string name="mode_title_custom">Custom</string>
+    <string name="mode_title_journey">Journey</string>
+    <string name="mode_title_recharge">Recharge</string>
+    <string name="setting_title_visible_apps">Sichtbare Apps</string>
+    <string name="setting_title_visible_apps_selector">Wählen Sie sichtbare Apps aus</string>
+    <string name="setting_title_allowed_contacts">Erlaubte Kontakte</string>
+    <string name="setting_title_allowed_apps">Erlaubte Apps</string>
+    <string name="setting_title_customization_settings">Anpassungseinstellungen</string>
+    <string name="setting_header_allowed_contacts">Wer kann Sie erreichen, während Sie sich im %1$s-Moment befinden?</string>
+    <string name="profile_state_active">Aktiv</string>
+    <string name="visible_apps_count">%1$d / %2$d ausgewählt</string>
+    <string name="visible_apps_error_empty_selected">Wählen Sie mindestens eine App aus</string>
+    <string name="visible_apps_error_max_selected">%1$d / %1$d ausgewählt</string>
+    <string name="bt_confirm">Bestätigen</string>
+    <string name="profile_name_editor_title">Moment umbenennen</string>
+    <string name="profile_name_max_length_error">Halten Sie Ihren zweiten Namen unter 15 Zeichen</string>
+    <string name="search_app_info_bar_placeholder">Apps suchen</string>
+    <string name="search_contact_info_bar_placeholder">Kontakte suchen</string>
+    <string name="people_type_everyone">Jeder</string>
+    <string name="people_type_none">Niemand</string>
+    <string name="people_type_all_contacts">Alle Kontakte</string>
+    <string name="people_type_starred">Nur markierte Kontakte</string>
+    <string name="people_type_custom">Wählen</string>
+    <string name="setting_subtitle_notification">Nichts erlaubt</string>
+    <string name="setting_header_visible_apps">Ordnen Sie die Reihenfolge der Apps auf Ihrem Bildschirm an</string>
+    <string name="bt_navigate_back">Zurück</string>
+    <string name="bt_navigation_close">Schließen</string>
+    <string name="bt_continue">Weitermachen</string>
+    <string name="bt_create_moment">Moment schaffen</string>
+    <string name="bt_switch_to_profile">Wechseln Sie zu diesem Moment</string>
+    <string name="bt_cancel">Stornieren</string>
+    <string name="bt_change_apps">Apps ändern</string>
+    <string name="mode_switcher_screen_header">Was ist dein nächster Moment?</string>
+    <string name="setting_title_notification">App-Benachrichtigungseinstellungen</string>
+    <string name="setting_title_appearance">Aussehen anpassen</string>
+    <string name="setting_title_sound_and_vibration">Ton und Vibration</string>
+    <string name="setting_title_power_saving">Energiespareinstellungen</string>
+    <string name="setting_subtitle_sound_and_vibration">Geräteeinstellungen anpassen</string>
+    <string name="setting_subtitle_power_saving">Sparen Sie Strom und verlängern Sie die Akkulaufzeit</string>
+    <string name="setting_subtitle_appearance">Ändern Sie das Erscheinungsbild nach Ihren Wünschen</string>
+    <string name="setting_button_delete_mode_not_allowed">Dies ist Ihr einziger Moment. Es kann nicht gelöscht werden.</string>
+    <string name="profile_switch_state_enabled">%1$s\naktiviert</string>
+    <string name="profile_switch_state_disabled">%1$s\ndeaktiviert</string>
+    <string name="do_not_disturb_access_rationale_title">Zugriff auf „Nicht stören“ erforderlich</string>
+    <string name="do_not_disturb_access_rationale_text">Fairphone Moments benötigt Zugriff auf „Nicht stören“, um ordnungsgemäß zu funktionieren. Erlaube den Zugriff in deinen Einstellungen.</string>
+    <string name="moments_demo_card_text">Auf diesem Fairphone (Gen. 6) läuft derzeit Fairphone Moments, eine neue Möglichkeit, Ihr Telefon zu nutzen. Wechseln Sie mit dem Lime-Schalter an der Seite zurück zum normalen Android. Oder klicken Sie hier, um mehr zu erfahren.</string>
+    <string name="close">Schließen</string>
+    <string name="no_internet_connection">Keine Internetverbindung</string>
+    <string name="setting_delete_mode_confirm">Möchten Sie diesen Modus wirklich löschen?</string>
+    <string name="add_mode_screen_header">Welchen Modus möchten Sie erstellen?</string>
+    <string name="choose_app_screen_header">Wählen Sie bis zu 5 Apps aus, die in Ihrem Moment angezeigt werden sollen</string>
+    <string name="mode_subtitle_quality_time">Priorisieren Sie Ihren Körper und Geist</string>
+    <string name="mode_subtitle_deep_focus">Entfesseln Sie Ihr Potenzial, indem Sie Ablenkungen ausblenden</string>
+    <string name="mode_subtitle_custom">Beginnen Sie mit einer leeren Version und passen Sie den Modus Ihren Anforderungen an</string>
+    <string name="mode_subtitle_journey">Konzentrieren Sie sich auf die Straße vor Ihnen</string>
+    <string name="mode_subtitle_recharge">Wachen Sie jeden Tag erfrischt und bereit für einen neuen Tag auf</string>
+    <string name="choose_app_screen_subtitle">Dies sind die Apps, die Sie sehen werden. Telefonanrufe werden weiterhin wie gewohnt angenommen.</string>
+    <string name="choose_app_background_header">Wählen Sie einen Hintergrund</string>
+    <string name="name_mode_screen_header">Geben Sie Ihrem Moment einen Namen</string>
+    <string name="setting_button_delete_mode">Löschen Sie den Modus</string>
+    <string name="onboarding_home_button_help">Tippen Sie, um Ihren\n Moment anzupassen.</string>
+    <string name="bt_apply_changes">Änderungen übernehmen</string>
+    <string name="onboarding_home_tooltitp">Wechseln Sie Momente und ändern Sie Einstellungen.</string>
+    <string name="setting_notifications_select_allowed">Erlaubte Benachrichtigungen auswählen</string>
+    <string name="setting_notifications_app">App-Benachrichtigungen</string>
+    <string name="setting_notifications_none">Keine erlaubt</string>
+    <string name="setting_notifications_allow_repeat_caller">Wiederholte Anrufer zulassen</string>
+    <string name="setting_notifications_allow_repeat_caller_desc">Mehrfachanrufe innerhalb von 15 Minuten</string>
+    <plurals name="setting_notifications_nb_allowed">
+        <item quantity="one">%1$d erlaubt</item>
+        <item quantity="other">%1$d erlaubt</item>
+    </plurals>
+    <string name="app_notifications_permission_header">Berechtigungen</string>
+    <string name="app_notifications_permission_text">Damit diese Einstellung funktioniert, benötigt Fairphone Moments die Berechtigungen, um deine Benachrichtigungen zu filtern und erneut zu veröffentlichen</string>
+    <string name="permission_toggle_title_notification_access">Benachrichtigungen lesen</string>
+    <string name="permission_toggle_subtitle_notification_access">Berechtigung, den Ursprung deiner Benachrichtigungen zu lesen</string>
+    <string name="permission_toggle_title_post_notification">Benachrichtigungen posten</string>
+    <string name="permission_toggle_subtitle_post_notification">Berechtigung, die gefilterten Benachrichtigungen erneut zu veröffentlichen</string>
+    <string name="wallpaper">Tapete</string>
+    <string name="update_wallpaper">Hintergrund aktualisieren</string>
+    <string name="maximum_moments_reached_label">Sie haben die maximale Anzahl an Momenten erreicht</string>
+</resources>

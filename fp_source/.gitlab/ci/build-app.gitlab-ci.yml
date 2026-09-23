@@ -1,0 +1,59 @@
+# Copyright (C) 2025 FairPhone B.V.
+#
+# SPDX-FileCopyrightText: 2025. FairPhone B.V.
+#
+# SPDX-License-Identifier: EUPL-1.2
+
+
+build:debug:
+  extends:
+    - .gradle-android-job
+    - .rule:if-no-version-upgrade-requested
+  interruptible: true
+  stage: build
+  needs:
+    - job: download:google-services
+      artifacts: true
+  script:
+    - ./gradlew assembleDebug
+  artifacts:
+    paths:
+      - app/build/outputs/apk/debug
+
+build:release:
+  extends:
+    - .gradle-android-job
+    - .rule:if-no-version-upgrade-requested
+    - .release-rule
+  interruptible: true
+  stage: build
+  needs:
+    - job: verify-tag-name
+    - job: download:google-services
+      artifacts: true
+    - job: download:keystore
+      artifacts: true
+  script:
+    - ./gradlew assembleRelease
+  artifacts:
+    paths:
+      - app/build/outputs/apk/release
+
+build:release:bundle:
+  extends:
+    - .gradle-android-job
+    - .rule:if-no-version-upgrade-requested
+    - .release-rule
+  interruptible: true
+  stage: build
+  needs:
+    - job: verify-tag-name
+    - job: download:google-services
+      artifacts: true
+    - job: download:keystore
+      artifacts: true
+  script:
+    - ./gradlew bundleRelease
+  artifacts:
+    paths:
+      - app/build/outputs/bundle/release

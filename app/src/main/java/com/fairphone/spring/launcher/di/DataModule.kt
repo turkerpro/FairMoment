@@ -1,0 +1,60 @@
+/*
+ * Copyright (C) 2025 FairPhone B.V.
+ *
+ * SPDX-FileCopyrightText: 2025. FairPhone B.V.
+ *
+ * SPDX-License-Identifier: EUPL-1.2
+ */
+
+package com.fairphone.spring.launcher.di
+
+import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
+import androidx.datastore.dataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import com.fairphone.spring.launcher.data.datasource.DeviceContactDataSource
+import com.fairphone.spring.launcher.data.datasource.DeviceContactDataSourceImpl
+import com.fairphone.spring.launcher.data.datasource.MIGRATION_LAUNCHER_PROFILE_APPS
+import com.fairphone.spring.launcher.data.datasource.ProfileDataSource
+import com.fairphone.spring.launcher.data.datasource.ProfileDataSourceImpl
+import com.fairphone.spring.launcher.data.model.protos.LauncherProfiles
+import com.fairphone.spring.launcher.data.prefs.AppPrefs
+import com.fairphone.spring.launcher.data.prefs.AppPrefsImpl
+import com.fairphone.spring.launcher.data.repository.AppInfoRepository
+import com.fairphone.spring.launcher.data.repository.AppInfoRepositoryImpl
+import com.fairphone.spring.launcher.data.repository.LauncherProfileRepository
+import com.fairphone.spring.launcher.data.repository.LauncherProfileRepositoryImpl
+import com.fairphone.spring.launcher.data.serializer.LauncherProfilesSerializer
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.module.dsl.bind
+import org.koin.core.module.dsl.singleOf
+import org.koin.dsl.module
+
+val dataModule = module {
+    singleOf(::AppInfoRepositoryImpl) { bind<AppInfoRepository>() }
+    singleOf(::LauncherProfileRepositoryImpl) { bind<LauncherProfileRepository>() }
+    singleOf(::DeviceContactDataSourceImpl) { bind<DeviceContactDataSource>() }
+    single<ProfileDataSource> { ProfileDataSourceImpl(androidContext().profileDataStore) }
+    single<AppPrefs> { AppPrefsImpl(androidContext().appPrefsDataStore) }
+}
+
+/**
+ * DataStore used to store App Prefs
+ */
+val Context.appPrefsDataStore: DataStore<Preferences> by preferencesDataStore(name = "app_prefs")
+
+/**
+ * DataStore used to store LauncherProfiles
+ */
+val Context.profileDataStore: DataStore<LauncherProfiles> by dataStore(
+    fileName = "profiles.pb",
+    serializer = LauncherProfilesSerializer,
+    produceMigrations = { context ->
+        listOf(MIGRATION_LAUNCHER_PROFILE_APPS)
+    },
+    corruptionHandler = ReplaceFileCorruptionHandler {
+        LauncherProfiles.getDefaultInstance()
+    }
+)

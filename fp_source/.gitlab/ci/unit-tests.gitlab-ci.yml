@@ -1,0 +1,22 @@
+# Copyright (C) 2025 FairPhone B.V.
+#
+# SPDX-FileCopyrightText: 2025. FairPhone B.V.
+#
+# SPDX-License-Identifier: EUPL-1.2
+
+test:
+  extends: .gradle-android-job
+  interruptible: true
+  stage: test
+  needs:
+    - job: download:google-services
+      artifacts: true
+  script:
+    - ./gradlew testUnitTest
+  artifacts:
+    reports:
+      junit:
+        - app/build/test-results/testDebugUnitTest/TEST-*.xml
+    paths:
+      - app/build/test-results/testDebugUnitTest/TEST-*.xml
+

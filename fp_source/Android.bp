@@ -1,0 +1,29 @@
+/*
+ * Copyright (C) 2025 FairPhone B.V.
+ * SPDX-FileCopyrightText: 2025. FairPhone B.V.
+ *
+ * SPDX-License-Identifier: EUPL-1.2
+ */
+
+//
+// Prebuilt Launcher client library Libraries
+//
+package {
+    // See: http://go/android-license-faq
+    //   legacy_proprietary
+    default_applicable_licenses: [
+        "Android-Apache-2.0",
+    ],
+}
+
+android_app_import {
+    name: "SpringLauncher",
+    apk: "SpringLauncher.apk",
+    presigned: true,
+    preprocessed: true,
+    privileged: true,
+    enforce_uses_libs: false,
+    dex_preopt: {
+        enabled: false,
+    }
+}

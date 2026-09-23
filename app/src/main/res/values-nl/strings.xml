@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2025 FairPhone B.V.
+  ~
+  ~ SPDX-FileCopyrightText: 2025. FairPhone B.V.
+  ~
+  ~ SPDX-License-Identifier: EUPL-1.2
+  -->
+
+<resources>
+    <string name="default_profile_name">Essentials</string>
+    <string name="mode_title_essential">Essentials</string>
+    <string name="mode_title_quality_time">Quality Time</string>
+    <string name="mode_title_deep_focus">Deep focus</string>
+    <string name="mode_title_custom">Custom</string>
+    <string name="mode_title_journey">Journey</string>
+    <string name="mode_title_recharge">Recharge</string>
+    <string name="setting_title_visible_apps">Zichtbare apps</string>
+    <string name="setting_title_visible_apps_selector">Selecteer zichtbare apps</string>
+    <string name="setting_title_allowed_contacts">Toegestane contacten</string>
+    <string name="setting_title_allowed_apps">Toegestane apps</string>
+    <string name="setting_title_customization_settings">Personalisatie instellingen</string>
+    <string name="setting_header_allowed_contacts">Wie mag je in %1$s storen?</string>
+    <string name="profile_state_active">Actief</string>
+    <string name="visible_apps_count">%1$d / %2$d geselecteerd</string>
+    <string name="visible_apps_error_empty_selected">Kies ten minste één app</string>
+    <string name="visible_apps_error_max_selected">%1$d / %1$d geselecteerd</string>
+    <string name="bt_confirm">Bevestigen</string>
+    <string name="profile_name_editor_title">Moment naam wijzigen</string>
+    <string name="profile_name_max_length_error">Houd uw momentnaam onder de 15 tekens</string>
+    <string name="search_app_info_bar_placeholder">Zoek in je apps</string>
+    <string name="search_contact_info_bar_placeholder">Zoek contacten</string>
+    <string name="people_type_everyone">Iedereen</string>
+    <string name="people_type_none">Niemand</string>
+    <string name="people_type_all_contacts">Alle contacten</string>
+    <string name="people_type_starred">Alleen contacten met ster</string>
+    <string name="people_type_custom">Kiezen</string>
+    <string name="setting_title_appearance">Wijzig het uiterlijk</string>
+    <string name="setting_title_sound_and_vibration">Geluid &amp; trillingen</string>
+    <string name="setting_title_power_saving">Energiebesparende instellingen</string>
+    <string name="setting_subtitle_sound_and_vibration">Gebruik apparaatinstellingen</string>
+    <string name="setting_subtitle_power_saving">Bespaar energie en verleng de levensduur van je batterij</string>
+    <string name="setting_subtitle_appearance">Verander het uiterlijk naar wens</string>
+    <string name="setting_subtitle_notification">Geen toegestaan</string>
+    <string name="setting_header_visible_apps">Wijzig de volgorde van de apps op je scherm</string>
+    <string name="bt_navigate_back">Rug</string>
+    <string name="bt_navigation_close">Dichtbij</string>
+    <string name="bt_continue">Doorgaan</string>
+    <string name="bt_create_moment">Creëer moment</string>
+    <string name="bt_switch_to_profile">Switch naar dit moment</string>
+    <string name="bt_cancel">Annuleren</string>
+    <string name="bt_change_apps">Wijzig apps</string>
+    <string name="mode_switcher_screen_header">Wat is je volgende moment?</string>
+    <string name="setting_title_notification">App notificatie instellingen</string>
+    <string name="setting_button_delete_mode_not_allowed">Dit is je enige moment. Deze kan niet worden verwijderd.</string>
+    <string name="setting_notifications_allow_repeat_caller_desc">Iemand die meerdere keren belt binnen een periode van 15 minuten</string>
+    <string name="profile_switch_state_enabled">%1$s\ningeschakeld</string>
+    <string name="profile_switch_state_disabled">%1$s\nuitgeschakeld</string>
+    <string name="do_not_disturb_access_rationale_title">Niet storen-toegang vereist</string>
+    <string name="do_not_disturb_access_rationale_text">Fairphone Moments heeft toegang tot Niet storen nodig om correct te functioneren. Sta toegang toe in je instellingen.</string>
+    <string name="moments_demo_card_text">Deze Fairphone (Gen. 6) laat Fairphone Moments zien, een nieuwe manier om je telefoon verantwoord te gebruiken. Zet de groene switch aan de zijkant om om terug te gaan naar het reguliere Android thuisschem. Of klik hier om meer te weten te komen.</string>
+    <string name="close">Sluiten</string>
+    <string name="no_internet_connection">Geen internetverbinding</string>
+    <string name="setting_delete_mode_confirm">Weet u zeker dat u deze modus wilt verwijderen?</string>
+    <string name="add_mode_screen_header">Welke modus wil je creëren?</string>
+    <string name="choose_app_screen_header">Kies maximaal 5 apps om in je Moment te tonen</string>
+    <string name="mode_subtitle_quality_time">Geef prioriteit aan je lichaam en geest</string>
+    <string name="mode_subtitle_deep_focus">Ontgrendel je potentieel door afleidingen uit te sluiten</string>
+    <string name="mode_subtitle_custom">Begin leeg en pas de modus aan uw behoeften aan</string>
+    <string name="mode_subtitle_journey">Concentreer u op de weg vooruit</string>
+    <string name="mode_subtitle_recharge">Word elke dag uitgerust wakker en klaar voor een nieuwe dag</string>
+    <string name="choose_app_screen_subtitle">Dit zijn de apps die je ziet. Telefoongesprekken komen nog steeds gewoon door.</string>
+    <string name="choose_app_background_header">Kies een achtergrond</string>
+    <string name="name_mode_screen_header">Geef je moment een naam</string>
+    <string name="setting_button_delete_mode">Verwijder de modus</string>
+    <string name="onboarding_home_button_help">Tik om uw Moment\n te personaliseren.</string>
+    <string name="bt_apply_changes">Wijzigingen toepassen</string>
+    <string name="onboarding_home_tooltitp">Wissel van moment en wijzig de instellingen.</string>
+    <string name="setting_notifications_select_allowed">Selecteer toegestane meldingen</string>
+    <string name="setting_notifications_app">App-meldingen</string>
+    <string name="setting_notifications_allow_repeat_caller">Herhaalde bellers toestaan</string>
+    <string name="setting_notifications_none">Geen toegestaan</string>
+    <plurals name="setting_notifications_nb_allowed">
+        <item quantity="one">%1$d toegestaan</item>
+        <item quantity="other">%1$d toegestaan</item>
+    </plurals>
+    <string name="app_notifications_permission_header">Machtigingen</string>
+    <string name="app_notifications_permission_text">Om deze instelling te laten werken, moet Fairphone Moments de rechten hebben om je notificaties te filteren en opnieuw te plaatsen</string>
+    <string name="permission_toggle_title_notification_access">Notificaties lezen</string>
+    <string name="permission_toggle_subtitle_notification_access">Toestemming om de oorsprong van je notificaties te lezen</string>
+    <string name="permission_toggle_title_post_notification">Notificaties plaatsen</string>
+    <string name="permission_toggle_subtitle_post_notification">Toestemming om de gefilterde notificaties opnieuw te plaatsen</string>
+    <string name="wallpaper">Achtergrond</string>
+    <string name="update_wallpaper">Achtergrond bijwerken</string>
+    <string name="maximum_moments_reached_label">Je hebt het maximale aantal momenten bereikt</string>
+
+    <string name="sound_and_vibration_title">Geluid en trilling</string>
+    <string name="sound_and_vibration_description">Overschrijf de geluids- en trillingsinstellingen van je apparaat naar je voorkeur</string>
+    <string name="sound_and_vibration_match_title">Apparaatinstellingen aanpassen</string>
+    <string name="sound_and_vibration_match_subtitle">Volg de huidige instellingen van je apparaat</string>
+    <string name="sound_and_vibration_loud_title">Luid</string>
+    <string name="sound_and_vibration_loud_subtitle">Speel alle geluiden af op maximaal volume</string>
+    <string name="sound_and_vibration_vibrate_title">Trillen</string>
+    <string name="sound_and_vibration_vibrate_subtitle">Geluiden dempen en alleen trillen inschakelen</string>
+    <string name="sound_and_vibration_silent_title">Stil</string>
+    <string name="sound_and_vibration_silent_subtitle">Alle geluiden en trillingen uitschakelen</string>
+
+    <string name="setting_blue_light_filter_title">Blauwlichtfilter</string>
+    <string name="setting_blue_light_filter_descritpion">Maakt het scherm\'s nachts minder belastend voor je ogen</string>
+    <string name="setting_grayscale_title">Grijstinten</string>
+    <string name="setting_grayscale_description">Zet uw scherm in zwart-wit.</string>
+</resources>

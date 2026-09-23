@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2025 FairPhone B.V.
+  ~
+  ~ SPDX-FileCopyrightText: 2025. FairPhone B.V.
+  ~
+  ~ SPDX-License-Identifier: EUPL-1.2
+  -->
+
+<resources>
+    <string name="app_name" translatable="false">Fairphone Moments</string>
+
+    <string name="default_profile_name">Essentials</string>
+
+    <string name="setting_title_visible_apps">Visible apps</string>
+    <string name="setting_title_visible_apps_selector">Select visible apps</string>
+    <string name="setting_title_allowed_contacts">Allowed contacts</string>
+    <string name="setting_title_allowed_apps">Allowed apps</string>
+    <string name="setting_title_customization_settings">Customization settings</string>
+
+    <string name="setting_header_allowed_contacts">Who can reach out to you while you\'re in %1$s moment</string>
+
+    <string name="bt_confirm">Confirm</string>
+    <string name="bt_cancel">Cancel</string>
+    <string name="bt_change_apps">Change apps</string>
+    <string name="bt_navigate_back">Back</string>
+    <string name="bt_navigation_close">Close</string>
+    <string name="bt_continue">Continue</string>
+    <string name="bt_create_moment">Create moment</string>
+    <string name="bt_switch_to_profile">Switch to this moment</string>
+
+    <string name="profile_state_active">Active</string>
+    <string name="visible_apps_count">%1$d / %2$d selected</string>
+    <string name="visible_apps_error_empty_selected">Pick at least one app</string>
+    <string name="visible_apps_error_max_selected">%1$d / %1$d selected</string>
+    <string name="profile_name_editor_title">Rename moment</string>
+    <string name="profile_name_max_length_error">Keep your moment name under 15 characters</string>
+    <string name="search_app_info_bar_placeholder">Search apps</string>
+    <string name="search_contact_info_bar_placeholder">Search contacts</string>
+
+    <string name="people_type_everyone">Everyone</string>
+    <string name="people_type_none">No one</string>
+    <string name="people_type_all_contacts">All contacts</string>
+    <string name="people_type_starred">Only starred contacts</string>
+    <string name="people_type_custom">Choose</string>
+
+    <string name="mode_switcher_screen_header">What\'s your next moment?</string>
+
+    <string name="onboarding_home_button_help">Tap to customize\n your Moment.</string>
+
+    <string name="setting_title_appearance">Customize appearance</string>
+    <string name="setting_title_sound_and_vibration">Sound &amp; vibration</string>
+    <string name="setting_title_power_saving">Power-saving settings</string>
+    <string name="setting_subtitle_sound_and_vibration">Match device settings</string>
+    <string name="setting_subtitle_power_saving">Save power and extend your battery life</string>
+    <string name="setting_subtitle_appearance">Change the look at feel to your liking</string>
+    <string name="setting_header_visible_apps">Arrange the order of the apps on your screen</string>
+    <string name="setting_button_delete_mode">Delete mode</string>
+    <string name="setting_delete_mode_confirm">Are you sure you want to delete this mode?</string>
+    <string name="setting_button_delete_mode_not_allowed">This is your only mode. It can’t be deleted.</string>
+
+    <string name="setting_title_notification">Notification settings</string>
+    <string name="setting_subtitle_notification">Manage the notifications you receive</string>
+    <string name="setting_notifications_select_allowed">Select allowed notifications</string>
+    <string name="setting_notifications_app">App notifications</string>
+    <string name="setting_notifications_none">None allowed</string>
+    <plurals name="setting_notifications_nb_allowed">
+        <item quantity="one">%1$d allowed</item>
+        <item quantity="other">%1$d allowed</item>
+    </plurals>
+    <string name="setting_notifications_allow_repeat_caller">Allow repeat callers</string>
+    <string name="setting_notifications_allow_repeat_caller_desc">Someone who calls multiple times within a 15-minute period</string>
+
+    <!-- Switch state change overlay -->
+    <string name="profile_switch_state_enabled">%1$s\nenabled</string>
+    <string name="profile_switch_state_disabled">%1$s\ndisabled</string>
+
+    <string name="do_not_disturb_access_rationale_title">Do Not Disturb access needed</string>
+    <string name="do_not_disturb_access_rationale_text">Fairphone Moments needs Do Not Disturb access to run correctly. Allow access in your settings.</string>
+
+    <string name="moments_demo_card_text">This Fairphone (Gen. 6) is currently running Moments, a new way to use your phone.\n\n Switch back to regular Android with the lime switch on the side. Or click here to learn more</string>
+    <string name="close">Close</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="add_mode_screen_header">What mode would you like to create?</string>
+
+    <string name="choose_app_screen_header">Choose up to 5 apps to show in your Moment</string>
+    <string name="choose_app_screen_subtitle">These are the apps you\'ll see. Phone calls will still come through as normal.</string>
+    <string name="choose_app_background_header">Choose a background</string>
+
+    <string name="name_mode_screen_header">Name your moment</string>
+
+    <string name="mode_title_essential">Essentials</string>
+    <string name="mode_title_quality_time">Quality Time</string>
+    <string name="mode_title_deep_focus">Deep focus</string>
+    <string name="mode_title_custom">Custom</string>
+    <string name="mode_title_journey">Journey</string>
+    <string name="mode_title_recharge">Recharge</string>
+
+    <string name="mode_subtitle_quality_time">Prioritize your body and mind</string>
+    <string name="mode_subtitle_deep_focus">Unlock your potential by shutting out distractions</string>
+    <string name="mode_subtitle_custom">Start blank and tailor the mode to fit your needs</string>
+    <string name="mode_subtitle_journey">Focus on the road ahead</string>
+    <string name="mode_subtitle_recharge">Wake up refreshed and ready for a new day, every day</string>
+    <string name="bt_apply_changes">Apply changes</string>
+    <string name="onboarding_home_tooltitp">Switch Moments and change settings.</string>
+
+    <string name="app_notifications_permission_header">Permissions</string>
+    <string name="app_notifications_permission_text">In order for this setting to work, Fairphone Moments needs to have permissions to filter and repost your notifications</string>
+    <string name="permission_toggle_title_notification_access">Read Notifications</string>
+    <string name="permission_toggle_subtitle_notification_access">Permission to read the origin of your notifications</string>
+    <string name="permission_toggle_title_post_notification">Post Notifications</string>
+    <string name="permission_toggle_subtitle_post_notification">Permission to repost the filtered notifications</string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="update_wallpaper">Update wallpaper</string>
+    <string name="maximum_moments_reached_label">You have reached the maximum amount of moments</string>
+
+    <!-- Home & App Library Strings -->
+    <string name="app_library_title">App Library</string>
+    <string name="app_library_search_placeholder">App Library</string>
+    <string name="home_swipe_hint">App Library</string>
+    <string name="no_apps_found">No apps found</string>
+    <string name="category_suggestions">Suggestions</string>
+    <string name="category_social">Social</string>
+    <string name="category_productivity">Productivity &amp; Finance</string>
+    <string name="category_utilities">Utilities</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_creativity">Creativity</string>
+    <string name="category_other">Other</string>
+
+    <!-- Widgets & Customization Strings -->
+    <string name="widgets_title">Today Widgets</string>
+    <string name="widgets_customize">Customize</string>
+    <string name="widgets_done">Done</string>
+    <string name="widget_weather_title">Weather</string>
+    <string name="widget_calendar_title">Calendar</string>
+    <string name="widget_battery_title">Battery &amp; Device</string>
+    <string name="widget_notes_title">Quick Notes</string>
+    <string name="widget_screentime_title">Screen Time</string>
+    <string name="widget_shortcuts_title">Quick Actions</string>
+    <string name="widget_music_title">Now Playing</string>
+    <string name="widget_world_clock_title">World Clock</string>
+    <string name="widget_quotes_title">Daily Inspiration</string>
+    <string name="widget_fitness_title">Activity &amp; Fitness</string>
+    <string name="widget_stack_title">Smart Stack</string>
+    <string name="widget_add_title">Add Widget</string>
+    <string name="widget_add_to_stack">Add to Stack</string>
+    <string name="widget_create_stack">Create Smart Stack</string>
+    <string name="widget_edit_stack">Edit Stack</string>
+    <string name="widget_gallery_title">Widget Gallery</string>
+    <string name="widget_gallery_subtitle">Choose a widget to add to your Today feed or stack</string>
+    <string name="widget_delete">Remove</string>
+    <string name="widget_installed_app_title">App Widget</string>
+    <string name="tab_launcher_widgets">Launcher Widgets</string>
+    <string name="tab_installed_app_widgets">Installed Apps</string>
+    <string name="open_system_widget_picker">Open System Picker</string>
+    <string name="search_app_widgets_hint">Search installed apps &amp; widgets…</string>
+    <string name="no_app_widgets_found">No app widgets found on device</string>
+
+    <string name="font_settings_title">Typography &amp; Fonts</string>
+    <string name="font_settings_clock_title">Clock &amp; Date Font</string>
+    <string name="font_settings_menu_title">Menu / App List Font</string>
+    <string name="font_preview_sample">Preview Typography</string>
+
+    <string name="launcher_customize_title">Home Screen &amp; Style</string>
+    <string name="tab_typography">Fonts</string>
+    <string name="tab_wallpaper">Wallpaper</string>
+    <string name="wallpaper_blur_title">Wallpaper Blur</string>
+    <string name="wallpaper_dim_title">Background Contrast / Dim</string>
+    <string name="wallpaper_gallery_pick">Choose from Photos</string>
+    <string name="wallpaper_style_title">Wallpaper Presets</string>
+    <string name="home_long_press_hint">Long press on screen to customize</string>
+</resources>

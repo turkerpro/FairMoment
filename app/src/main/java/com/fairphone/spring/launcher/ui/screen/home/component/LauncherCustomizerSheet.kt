@@ -86,6 +86,12 @@ fun LauncherCustomizerSheet(
     onDimAlphaChange: (Float) -> Unit,
     onCustomImageSelected: (String?) -> Unit,
     onDismiss: () -> Unit,
+    customColorPrimary: Long = 0xFF4F46E5L,
+    customColorSecondary: Long = 0xFFEC4899L,
+    customColorStyle: String = "linear",
+    onCustomColorPrimaryChange: (Long) -> Unit = {},
+    onCustomColorSecondaryChange: (Long) -> Unit = {},
+    onCustomColorStyleChange: (String) -> Unit = {},
     activeMomentName: String = "",
     currentTime: String = "12:45",
     currentDate: String = "Wed, 23 Sep"
@@ -434,6 +440,8 @@ fun LauncherCustomizerSheet(
                                         isSelected = isSelected,
                                         cardBg = cardBg,
                                         isDark = isDark,
+                                        customColorPrimary = customColorPrimary,
+                                        customColorSecondary = customColorSecondary,
                                         onClick = { onWallpaperTypeChange(type) },
                                         modifier = Modifier.weight(1f)
                                     )
@@ -444,6 +452,37 @@ fun LauncherCustomizerSheet(
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(18.dp))
+
+                    // Color Scale & Gradient Customizer
+                    ColorSpectrumPicker(
+                        primaryColor = customColorPrimary,
+                        secondaryColor = customColorSecondary,
+                        gradientStyle = customColorStyle,
+                        onPrimaryColorChange = { col ->
+                            onCustomColorPrimaryChange(col)
+                            if (selectedWallpaperType != LauncherWallpaperType.CUSTOM_SPECTRUM) {
+                                onWallpaperTypeChange(LauncherWallpaperType.CUSTOM_SPECTRUM)
+                            }
+                        },
+                        onSecondaryColorChange = { col ->
+                            onCustomColorSecondaryChange(col)
+                            if (selectedWallpaperType != LauncherWallpaperType.CUSTOM_SPECTRUM) {
+                                onWallpaperTypeChange(LauncherWallpaperType.CUSTOM_SPECTRUM)
+                            }
+                        },
+                        onGradientStyleChange = { style ->
+                            onCustomColorStyleChange(style)
+                            if (selectedWallpaperType != LauncherWallpaperType.CUSTOM_SPECTRUM) {
+                                onWallpaperTypeChange(LauncherWallpaperType.CUSTOM_SPECTRUM)
+                            }
+                        },
+                        isDark = isDark,
+                        cardBg = cardBg,
+                        sheetTextColor = sheetTextColor,
+                        subtitleTextColor = subtitleTextColor
+                    )
 
                     Spacer(modifier = Modifier.height(18.dp))
 
@@ -655,6 +694,8 @@ fun WallpaperCardItem(
     isSelected: Boolean,
     cardBg: Color,
     isDark: Boolean,
+    customColorPrimary: Long = 0xFF4F46E5L,
+    customColorSecondary: Long = 0xFFEC4899L,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -698,6 +739,9 @@ fun WallpaperCardItem(
                             )
                             LauncherWallpaperType.MINIMAL_WHITE -> Modifier.background(
                                 Brush.verticalGradient(listOf(Color(0xFFFFFFFF), Color(0xFFF2F2F5)))
+                            )
+                            LauncherWallpaperType.CUSTOM_SPECTRUM -> Modifier.background(
+                                Brush.verticalGradient(listOf(Color(customColorPrimary), Color(customColorSecondary)))
                             )
                             LauncherWallpaperType.CUSTOM_IMAGE -> Modifier.background(Color(0xFF202020))
                         }

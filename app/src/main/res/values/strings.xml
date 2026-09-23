@@ -169,5 +169,16 @@
     <string name="wallpaper_dim_title">Background Contrast / Dim</string>
     <string name="wallpaper_gallery_pick">Choose from Photos</string>
     <string name="wallpaper_style_title">Wallpaper Presets</string>
+    <string name="wallpaper_color_scale_title">Renk Skalası &amp; Degrade</string>
+    <string name="wallpaper_color_scale_subtitle">Renk skalasından dilediğin tonları seçerek odağına özel degrade oluştur.</string>
+    <string name="color_primary_label">Birincil Renk</string>
+    <string name="color_secondary_label">İkincil Renk</string>
+    <string name="color_spectrum_hue">Renk Tayfı / Skalası</string>
+    <string name="color_spectrum_lightness">Parlaklık / Işık</string>
+    <string name="color_spectrum_saturation">Doygunluk / Canlılık</string>
+    <string name="color_style_linear">Dikey</string>
+    <string name="color_style_diagonal">Çapraz</string>
+    <string name="color_style_radial">Radyal</string>
+    <string name="color_style_dynamic">Bloblar</string>
     <string name="home_long_press_hint">Long press on screen to customize</string>
 </resources>

@@ -96,6 +96,9 @@ class HomeScreenViewModel(
             val blurR = wallpaperPreferences.getBlurRadius(profile.id)
             val dimA = wallpaperPreferences.getDimAlpha(profile.id)
             val customUri = wallpaperPreferences.getCustomImageUri(profile.id)
+            val customColPrimary = wallpaperPreferences.getCustomColorPrimary(profile.id)
+            val customColSecondary = wallpaperPreferences.getCustomColorSecondary(profile.id)
+            val customColStyle = wallpaperPreferences.getCustomColorStyle(profile.id)
 
             // Resolve visible apps directly from in-memory installedApps map when available
             val visibleApps = if (installedApps.isNotEmpty()) {
@@ -156,7 +159,10 @@ class HomeScreenViewModel(
                 wallpaperType = wallType,
                 blurRadius = blurR,
                 dimAlpha = dimA,
-                customImageUri = customUri
+                customImageUri = customUri,
+                customColorPrimary = customColPrimary,
+                customColorSecondary = customColSecondary,
+                customColorStyle = customColStyle
             )
         }.stateIn(
             scope = viewModelScope,
@@ -190,6 +196,21 @@ class HomeScreenViewModel(
     fun setCustomImageUri(uri: String?) {
         val currentProfileId = screenState.value?.activeProfile?.id ?: ""
         wallpaperPreferences.setCustomImageUri(currentProfileId, uri)
+    }
+
+    fun setCustomColorPrimary(color: Long) {
+        val currentProfileId = screenState.value?.activeProfile?.id ?: ""
+        wallpaperPreferences.setCustomColorPrimary(currentProfileId, color)
+    }
+
+    fun setCustomColorSecondary(color: Long) {
+        val currentProfileId = screenState.value?.activeProfile?.id ?: ""
+        wallpaperPreferences.setCustomColorSecondary(currentProfileId, color)
+    }
+
+    fun setCustomColorStyle(style: String) {
+        val currentProfileId = screenState.value?.activeProfile?.id ?: ""
+        wallpaperPreferences.setCustomColorStyle(currentProfileId, style)
     }
 
     init {
@@ -256,4 +277,7 @@ data class HomeScreenState(
     val blurRadius: Float = 0f,
     val dimAlpha: Float = 0f,
     val customImageUri: String? = null,
+    val customColorPrimary: Long = 0xFF4F46E5L,
+    val customColorSecondary: Long = 0xFFEC4899L,
+    val customColorStyle: String = "linear",
 )

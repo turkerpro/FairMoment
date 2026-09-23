@@ -32,6 +32,9 @@ fun LauncherWallpaperBackground(
     blurRadius: Float = 0f,
     dimAlpha: Float = 0f,
     customImageUri: String? = null,
+    customColorPrimary: Long = 0xFF4F46E5L,
+    customColorSecondary: Long = 0xFFEC4899L,
+    customColorStyle: String = "linear",
     profileColors: LauncherColors = LauncherColors.Default,
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
@@ -146,6 +149,68 @@ fun LauncherWallpaperBackground(
                                     )
                                 )
                         )
+                    }
+                    LauncherWallpaperType.CUSTOM_SPECTRUM -> {
+                        when (customColorStyle) {
+                            "radial" -> {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(
+                                            Brush.radialGradient(
+                                                colors = listOf(
+                                                    Color(customColorSecondary),
+                                                    Color(customColorPrimary),
+                                                    Color(customColorPrimary).copy(alpha = 0.7f),
+                                                    Color(0xFF090A10)
+                                                ),
+                                                radius = 1200f
+                                            )
+                                        )
+                                )
+                            }
+                            "diagonal" -> {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(
+                                            Brush.linearGradient(
+                                                colors = listOf(
+                                                    Color(customColorPrimary),
+                                                    Color(customColorSecondary),
+                                                    Color(0xFF0D0E17)
+                                                ),
+                                                start = androidx.compose.ui.geometry.Offset.Zero,
+                                                end = androidx.compose.ui.geometry.Offset.Infinite
+                                            )
+                                        )
+                                )
+                            }
+                            "dynamic" -> {
+                                AnimatedBackground(
+                                    colors = LauncherColors(
+                                        rightColor = customColorPrimary,
+                                        leftColor = customColorSecondary
+                                    ),
+                                    modifier = Modifier.fillMaxSize()
+                                )
+                            }
+                            else -> { // "linear"
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(
+                                            Brush.verticalGradient(
+                                                colors = listOf(
+                                                    Color(customColorPrimary),
+                                                    Color(customColorSecondary),
+                                                    Color(0xFF0C0D15)
+                                                )
+                                            )
+                                        )
+                                )
+                            }
+                        }
                     }
                     LauncherWallpaperType.CUSTOM_IMAGE -> {
                         if (!customImageUri.isNullOrEmpty()) {

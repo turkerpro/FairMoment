@@ -26,6 +26,7 @@ enum class LauncherWallpaperType(
     SUNSET_DUNES("sunset_dunes", "Sunset Dunes", false, "Warm terracotta and golden amber"),
     EMERALD_FOREST("emerald_forest", "Emerald Forest", false, "Calm deep pine and woodland greens"),
     MINIMAL_WHITE("minimal_white", "Minimal White", true, "Crisp high-key minimalist theme"),
+    CUSTOM_SPECTRUM("custom_spectrum", "Renk Skalası", false, "Kişisel degrade & renk skalası"),
     CUSTOM_IMAGE("custom_image", "Gallery Photo", false, "User chosen custom image");
 
     companion object {
@@ -193,10 +194,59 @@ class WallpaperPreferences(context: Context) {
         setCustomImageUri(activeProfileId, uri)
     }
 
+    // Per-profile custom color spectrum methods
+    fun getCustomColorPrimary(profileId: String): Long {
+        val specificKey = keyFor(KEY_CUSTOM_COLOR_PRIMARY, profileId)
+        return prefs.getLong(specificKey, 0xFF4F46E5L) // Elegant Modern Indigo
+    }
+
+    fun setCustomColorPrimary(profileId: String, color: Long) {
+        val specificKey = keyFor(KEY_CUSTOM_COLOR_PRIMARY, profileId)
+        prefs.edit().putLong(specificKey, color).apply()
+        _wallpaperUpdates.value++
+    }
+
+    fun getCustomColorSecondary(profileId: String): Long {
+        val specificKey = keyFor(KEY_CUSTOM_COLOR_SECONDARY, profileId)
+        return prefs.getLong(specificKey, 0xFFEC4899L) // Modern Rose Pink
+    }
+
+    fun setCustomColorSecondary(profileId: String, color: Long) {
+        val specificKey = keyFor(KEY_CUSTOM_COLOR_SECONDARY, profileId)
+        prefs.edit().putLong(specificKey, color).apply()
+        _wallpaperUpdates.value++
+    }
+
+    fun getCustomColorStyle(profileId: String): String {
+        val specificKey = keyFor(KEY_CUSTOM_COLOR_STYLE, profileId)
+        return prefs.getString(specificKey, "linear") ?: "linear"
+    }
+
+    fun setCustomColorStyle(profileId: String, style: String) {
+        val specificKey = keyFor(KEY_CUSTOM_COLOR_STYLE, profileId)
+        prefs.edit().putString(specificKey, style).apply()
+        _wallpaperUpdates.value++
+    }
+
+    fun setCustomColorPrimary(color: Long) {
+        setCustomColorPrimary(activeProfileId, color)
+    }
+
+    fun setCustomColorSecondary(color: Long) {
+        setCustomColorSecondary(activeProfileId, color)
+    }
+
+    fun setCustomColorStyle(style: String) {
+        setCustomColorStyle(activeProfileId, style)
+    }
+
     companion object {
         private const val KEY_WALLPAPER_TYPE = "key_wallpaper_type"
         private const val KEY_BLUR_RADIUS = "key_blur_radius"
         private const val KEY_DIM_ALPHA = "key_dim_alpha"
         private const val KEY_CUSTOM_URI = "key_custom_uri"
+        private const val KEY_CUSTOM_COLOR_PRIMARY = "key_custom_color_primary"
+        private const val KEY_CUSTOM_COLOR_SECONDARY = "key_custom_color_secondary"
+        private const val KEY_CUSTOM_COLOR_STYLE = "key_custom_color_style"
     }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Fairphone Moments",
-  "description": "Fairphone Moments digital wellbeing launcher with moments profiles, distraction-free home screen, and customization.",
+  "name": "FairMoment",
+  "description": "FairMoment digital wellbeing launcher with moments profiles, distraction-free home screen, and customization.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

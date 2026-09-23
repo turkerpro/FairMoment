@@ -9,7 +9,7 @@
   -->
 
 <resources>
-    <string name="app_name" translatable="false">Fairphone Moments</string>
+    <string name="app_name" translatable="false">FairMoment</string>
 
     <string name="default_profile_name">Essentials</string>
 

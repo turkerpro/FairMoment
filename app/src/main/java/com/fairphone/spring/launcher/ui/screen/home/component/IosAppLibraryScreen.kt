@@ -53,6 +53,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -67,8 +68,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -207,6 +210,16 @@ fun IosSearchBar(
     onQueryChange: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    var textFieldValue by remember {
+        mutableStateOf(TextFieldValue(text = query, selection = TextRange(query.length)))
+    }
+
+    LaunchedEffect(query) {
+        if (query != textFieldValue.text) {
+            textFieldValue = TextFieldValue(text = query, selection = TextRange(query.length))
+        }
+    }
+
     Surface(
         shape = RoundedCornerShape(16.dp),
         color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
@@ -232,7 +245,7 @@ fun IosSearchBar(
                 modifier = Modifier.weight(1f),
                 contentAlignment = Alignment.CenterStart
             ) {
-                if (query.isEmpty()) {
+                if (textFieldValue.text.isEmpty()) {
                     Text(
                         text = stringResource(R.string.app_library_search_placeholder),
                         style = TextStyle(
@@ -243,8 +256,13 @@ fun IosSearchBar(
                 }
 
                 BasicTextField(
-                    value = query,
-                    onValueChange = onQueryChange,
+                    value = textFieldValue,
+                    onValueChange = { newValue ->
+                        textFieldValue = newValue
+                        if (newValue.text != query) {
+                            onQueryChange(newValue.text)
+                        }
+                    },
                     singleLine = true,
                     textStyle = TextStyle(
                         fontSize = 16.sp,
@@ -255,9 +273,12 @@ fun IosSearchBar(
                 )
             }
 
-            if (query.isNotEmpty()) {
+            if (textFieldValue.text.isNotEmpty()) {
                 IconButton(
-                    onClick = { onQueryChange("") },
+                    onClick = {
+                        textFieldValue = TextFieldValue("", selection = TextRange.Zero)
+                        onQueryChange("")
+                    },
                     modifier = Modifier.size(28.dp)
                 ) {
                     Icon(

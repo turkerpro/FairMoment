@@ -98,35 +98,20 @@ fun HomeNavigation(
                     enter = homeEnterTransition,
                     exit = homeExitTransition,
                 ) {
-                    LauncherWallpaperBackground(
-                        wallpaperType = screenState!!.wallpaperType,
-                        blurRadius = screenState!!.blurRadius,
-                        dimAlpha = screenState!!.dimAlpha,
-                        customImageUri = screenState!!.customImageUri,
-                        profileColors = screenState!!.activeProfile.colors(),
-                        modifier = Modifier
-                            .background(MaterialTheme.colorScheme.background)
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxSize()
-                        ) {
-                            HomeScreen(
-                                isContentVisible = isContentVisible,
-                                onModeSwitcherButtonClick = {
-                                    if (screenState?.appUsageMode == UsageMode.ON_BOARDING) {
-                                        navController.navigate(OnBoarding)
-                                    } else {
-                                        navController.navigate(ModeSwitcher)
-                                    }
-                                },
-                                onTimeClick = {
-                                    navController.context.launchClockApp()
-                                },
-                                viewModel = viewModel,
-                            )
-                        }
-                    }
+                    HomeScreen(
+                        isContentVisible = isContentVisible,
+                        onModeSwitcherButtonClick = {
+                            if (screenState?.appUsageMode == UsageMode.ON_BOARDING) {
+                                navController.navigate(OnBoarding)
+                            } else {
+                                navController.navigate(ModeSwitcher)
+                            }
+                        },
+                        onTimeClick = {
+                            navController.context.launchClockApp()
+                        },
+                        viewModel = viewModel,
+                    )
                 }
             }
         }

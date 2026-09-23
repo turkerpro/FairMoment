@@ -80,10 +80,7 @@ class HomeScreenViewModel(
             _searchQuery,
             fontPreferences.clockFont,
             fontPreferences.menuFont,
-            wallpaperPreferences.wallpaperType,
-            wallpaperPreferences.blurRadius,
-            wallpaperPreferences.dimAlpha,
-            wallpaperPreferences.customImageUri
+            wallpaperPreferences.wallpaperUpdates
         ) { args: Array<Any?> ->
             @Suppress("UNCHECKED_CAST")
             val profile = args[0] as LauncherProfile
@@ -92,10 +89,13 @@ class HomeScreenViewModel(
             val query = args[2] as String
             val clockF = args[3] as LauncherFont
             val menuF = args[4] as LauncherFont
-            val wallType = args[5] as LauncherWallpaperType
-            val blurR = args[6] as Float
-            val dimA = args[7] as Float
-            val customUri = args[8] as String?
+
+            // Per-Focus/Profile wallpaper settings - distinct for each focus mode
+            wallpaperPreferences.setActiveProfileId(profile.id)
+            val wallType = wallpaperPreferences.getWallpaperType(profile.id, profile.name, profile.icon)
+            val blurR = wallpaperPreferences.getBlurRadius(profile.id)
+            val dimA = wallpaperPreferences.getDimAlpha(profile.id)
+            val customUri = wallpaperPreferences.getCustomImageUri(profile.id)
 
             // Resolve visible apps directly from in-memory installedApps map when available
             val visibleApps = if (installedApps.isNotEmpty()) {
@@ -173,19 +173,23 @@ class HomeScreenViewModel(
     }
 
     fun setWallpaperType(type: LauncherWallpaperType) {
-        wallpaperPreferences.setWallpaperType(type)
+        val currentProfileId = screenState.value?.activeProfile?.id ?: ""
+        wallpaperPreferences.setWallpaperType(currentProfileId, type)
     }
 
     fun setBlurRadius(radius: Float) {
-        wallpaperPreferences.setBlurRadius(radius)
+        val currentProfileId = screenState.value?.activeProfile?.id ?: ""
+        wallpaperPreferences.setBlurRadius(currentProfileId, radius)
     }
 
     fun setDimAlpha(dim: Float) {
-        wallpaperPreferences.setDimAlpha(dim)
+        val currentProfileId = screenState.value?.activeProfile?.id ?: ""
+        wallpaperPreferences.setDimAlpha(currentProfileId, dim)
     }
 
     fun setCustomImageUri(uri: String?) {
-        wallpaperPreferences.setCustomImageUri(uri)
+        val currentProfileId = screenState.value?.activeProfile?.id ?: ""
+        wallpaperPreferences.setCustomImageUri(currentProfileId, uri)
     }
 
     init {

@@ -29,10 +29,10 @@ import com.fairphone.spring.launcher.ui.component.AnimatedBackground
 @Composable
 fun LauncherWallpaperBackground(
     wallpaperType: LauncherWallpaperType,
-    blurRadius: Float,
-    dimAlpha: Float,
-    customImageUri: String?,
-    profileColors: LauncherColors,
+    blurRadius: Float = 0f,
+    dimAlpha: Float = 0f,
+    customImageUri: String? = null,
+    profileColors: LauncherColors = LauncherColors.Default,
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {

@@ -57,6 +57,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.fairphone.spring.launcher.data.model.AppInfo
 import com.fairphone.spring.launcher.data.model.AppLibraryCategory
 import com.fairphone.spring.launcher.data.model.Mock_Profile
+import com.fairphone.spring.launcher.data.model.colors
 import com.fairphone.spring.launcher.data.model.protos.LauncherProfile
 import com.fairphone.spring.launcher.data.prefs.LauncherWallpaperType
 import com.fairphone.spring.launcher.data.prefs.UsageMode
@@ -67,6 +68,7 @@ import com.fairphone.spring.launcher.ui.screen.home.component.CurrentModeButton
 import com.fairphone.spring.launcher.ui.screen.home.component.IosAppLibraryScreen
 import com.fairphone.spring.launcher.ui.screen.home.component.LauncherCustomizerSheet
 import com.fairphone.spring.launcher.ui.screen.home.component.LauncherPagerIndicator
+import com.fairphone.spring.launcher.ui.screen.home.component.LauncherWallpaperBackground
 import com.fairphone.spring.launcher.ui.screen.home.component.TodayWidgetScreen
 import com.fairphone.spring.launcher.ui.theme.FairphoneTypography
 import com.fairphone.spring.launcher.ui.theme.LauncherFont
@@ -196,7 +198,15 @@ fun HomeScreen(
         enter = fadeInAnimation,
         exit = ExitTransition.None
     ) {
-        HorizontalPager(
+        LauncherWallpaperBackground(
+            wallpaperType = wallpaperType,
+            blurRadius = blurRadius,
+            dimAlpha = dimAlpha,
+            customImageUri = customImageUri,
+            profileColors = activeProfile.colors(),
+            modifier = Modifier.fillMaxSize()
+        ) {
+            HorizontalPager(
             state = pagerState,
             modifier = Modifier.fillMaxSize()
         ) { page ->
@@ -340,6 +350,7 @@ fun HomeScreen(
             }
         }
     }
+}
 
     // Launcher Customizer Sheet (Fonts, Wallpaper Presets, Blur Slider & Dim Slider)
     if (showLauncherCustomizer) {
@@ -357,6 +368,7 @@ fun HomeScreen(
             onDimAlphaChange = onDimAlphaChange,
             onCustomImageSelected = onCustomImageSelected,
             onDismiss = { showLauncherCustomizer = false },
+            activeMomentName = activeProfile.name,
             currentTime = time,
             currentDate = date
         )

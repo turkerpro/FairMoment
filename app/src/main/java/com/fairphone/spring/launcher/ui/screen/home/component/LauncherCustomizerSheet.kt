@@ -86,6 +86,7 @@ fun LauncherCustomizerSheet(
     onDimAlphaChange: (Float) -> Unit,
     onCustomImageSelected: (String?) -> Unit,
     onDismiss: () -> Unit,
+    activeMomentName: String = "",
     currentTime: String = "12:45",
     currentDate: String = "Wed, 23 Sep"
 ) {
@@ -351,10 +352,39 @@ fun LauncherCustomizerSheet(
                     // TAB 2: WALLPAPER & BLUR (Duvar Kağıdı)
                     // ==========================================
 
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                            text = stringResource(R.string.wallpaper_style_title),
+                            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                            color = sheetTextColor
+                        )
+
+                        if (activeMomentName.isNotBlank()) {
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.15f),
+                                border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.4f))
+                            ) {
+                                Text(
+                                    text = "Odak: $activeMomentName",
+                                    style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
+                                    color = MaterialTheme.colorScheme.primary,
+                                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                                )
+                            }
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(4.dp))
+
                     Text(
-                        text = stringResource(R.string.wallpaper_style_title),
-                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                        color = sheetTextColor
+                        text = "Her odağın kendine özel bir duvar kağıdı bulunur. Seçtiğiniz stil sadece bu odak için geçerlidir.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = if (isDark) Color(0xFFA0A5B5) else Color(0xFF6B7280)
                     )
 
                     Spacer(modifier = Modifier.height(10.dp))

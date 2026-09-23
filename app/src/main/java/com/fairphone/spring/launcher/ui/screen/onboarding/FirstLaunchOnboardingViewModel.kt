@@ -15,7 +15,9 @@ import com.fairphone.spring.launcher.data.model.AppInfo
 import com.fairphone.spring.launcher.data.model.LauncherColors
 import com.fairphone.spring.launcher.data.model.protos.launcherProfileApp
 import com.fairphone.spring.launcher.data.prefs.AppPrefs
+import com.fairphone.spring.launcher.data.prefs.LauncherWallpaperType
 import com.fairphone.spring.launcher.data.prefs.UsageMode
+import com.fairphone.spring.launcher.data.prefs.WallpaperPreferences
 import com.fairphone.spring.launcher.data.repository.AppInfoRepository
 import com.fairphone.spring.launcher.domain.usecase.profile.GetActiveProfileUseCase
 import com.fairphone.spring.launcher.domain.usecase.profile.UpdateLauncherProfileUseCase
@@ -60,8 +62,10 @@ class FirstLaunchOnboardingViewModel(
     val uiState: StateFlow<FirstLaunchOnboardingUiState> = _uiState.asStateFlow()
 
     private var hasLoadedInitialData = false
+    private var appContext: Context? = null
 
     fun loadInitialData(context: Context) {
+        appContext = context.applicationContext
         if (hasLoadedInitialData) return
         hasLoadedInitialData = true
 
@@ -231,6 +235,21 @@ class FirstLaunchOnboardingViewModel(
                     .build()
 
                 updateLauncherProfileUseCase.execute(updatedProfile)
+
+                // Assign distinct matching wallpaper for this focus profile
+                appContext?.let { ctx ->
+                    val wp = WallpaperPreferences(ctx)
+                    val wall = when (_uiState.value.selectedColors.rightColor) {
+                        LauncherColors.DeepFocus.rightColor -> LauncherWallpaperType.DEEP_NEBULA
+                        LauncherColors.Journey.rightColor -> LauncherWallpaperType.NORDIC_TWILIGHT
+                        LauncherColors.QualityTime.rightColor -> LauncherWallpaperType.SUNSET_DUNES
+                        LauncherColors.Recharge.rightColor -> LauncherWallpaperType.EMERALD_FOREST
+                        LauncherColors.Custom.rightColor -> LauncherWallpaperType.SUNSET_DUNES
+                        else -> LauncherWallpaperType.FAIRPHONE_DYNAMIC
+                    }
+                    wp.setWallpaperType(updatedProfile.id, wall)
+                }
+
                 appPrefs.setFirstTimeUse(false)
                 appPrefs.setUsageMode(UsageMode.DEFAULT)
                 onComplete()

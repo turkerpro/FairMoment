@@ -9,16 +9,21 @@
 package com.fairphone.spring.launcher
 
 import android.graphics.drawable.ColorDrawable
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import com.fairphone.spring.launcher.data.model.AppInfo
 import com.fairphone.spring.launcher.data.model.AppLibraryCategorizer
 import com.fairphone.spring.launcher.data.model.LauncherColors
+import com.fairphone.spring.launcher.data.model.colors
 import com.fairphone.spring.launcher.data.model.protos.launcherProfile
+import com.fairphone.spring.launcher.data.prefs.LauncherWallpaperType
 import com.fairphone.spring.launcher.data.prefs.UsageMode
 import com.fairphone.spring.launcher.ui.icons.mode.ModeIcon
 import com.fairphone.spring.launcher.ui.screen.home.HomeScreen
 import com.fairphone.spring.launcher.ui.screen.home.component.IosAppLibraryScreen
+import com.fairphone.spring.launcher.ui.screen.home.component.LauncherWallpaperBackground
 import com.fairphone.spring.launcher.ui.screen.home.component.TodayWidgetScreen
 import com.fairphone.spring.launcher.ui.screen.onboarding.ChooseAtmosphereStepScreen
 import com.fairphone.spring.launcher.ui.screen.onboarding.CurateAppsStepScreen
@@ -208,6 +213,7 @@ class ScreenshotsCaptureTest {
                     categories = AppLibraryCategorizer.categorize(sampleApps, selectedSampleApps),
                     filteredApps = sampleApps,
                     searchQuery = "",
+                    wallpaperType = LauncherWallpaperType.DEEP_NEBULA,
                     onAppClick = {},
                     onModeSwitcherButtonClick = {},
                     onTooltipClick = {},
@@ -225,14 +231,22 @@ class ScreenshotsCaptureTest {
         val categories = AppLibraryCategorizer.categorize(sampleApps, selectedSampleApps)
         composeTestRule.setContent {
             SpringLauncherTheme {
-                IosAppLibraryScreen(
-                    categories = categories,
-                    filteredApps = sampleApps,
-                    searchQuery = "",
-                    onSearchQueryChange = {},
-                    onAppClick = {},
-                    onNavigateBackToHome = {}
-                )
+                LauncherWallpaperBackground(
+                    wallpaperType = LauncherWallpaperType.DEEP_NEBULA,
+                    blurRadius = 15f,
+                    dimAlpha = 0.25f,
+                    profileColors = focusProfile.colors(),
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    IosAppLibraryScreen(
+                        categories = categories,
+                        filteredApps = sampleApps,
+                        searchQuery = "",
+                        onSearchQueryChange = {},
+                        onAppClick = {},
+                        onNavigateBackToHome = {}
+                    )
+                }
             }
         }
         composeTestRule.waitForIdle()
@@ -244,10 +258,18 @@ class ScreenshotsCaptureTest {
     fun capture_screenshot_8_today_widgets() {
         composeTestRule.setContent {
             SpringLauncherTheme {
-                TodayWidgetScreen(
-                    date = "Wednesday, 23 September",
-                    onNavigateBackToHome = {}
-                )
+                LauncherWallpaperBackground(
+                    wallpaperType = LauncherWallpaperType.DEEP_NEBULA,
+                    blurRadius = 10f,
+                    dimAlpha = 0.2f,
+                    profileColors = focusProfile.colors(),
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    TodayWidgetScreen(
+                        date = "Wednesday, 23 September",
+                        onNavigateBackToHome = {}
+                    )
+                }
             }
         }
         composeTestRule.waitForIdle()

@@ -32,12 +32,57 @@ enum class LauncherWallpaperType(
         fun fromId(id: String?, default: LauncherWallpaperType = FAIRPHONE_DYNAMIC): LauncherWallpaperType {
             return entries.find { it.id == id } ?: default
         }
+
+        fun defaultWallpaperForProfile(
+            profileId: String,
+            profileName: String = "",
+            profileIcon: String = ""
+        ): LauncherWallpaperType {
+            val key = "$profileId $profileName $profileIcon".lowercase()
+            return when {
+                key.contains("work") || key.contains("ofis") || key.contains("study") || key.contains("çalışma") ->
+                    NORDIC_TWILIGHT
+                key.contains("relax") || key.contains("evening") || key.contains("sunset") || key.contains("dinlenme") || key.contains("akşam") ->
+                    SUNSET_DUNES
+                key.contains("focus") || key.contains("deep") || key.contains("zen") || key.contains("odak") ->
+                    DEEP_NEBULA
+                key.contains("nature") || key.contains("health") || key.contains("fitness") || key.contains("doğa") || key.contains("spor") ->
+                    EMERALD_FOREST
+                key.contains("sleep") || key.contains("night") || key.contains("uyku") || key.contains("gece") ->
+                    OLED_DARK
+                key.contains("minimal") || key.contains("light") || key.contains("read") || key.contains("kitap") ->
+                    MINIMAL_WHITE
+                key.contains("default") || key.contains("varsayılan") || key.contains("spring") || key.contains("essentials") ->
+                    FAIRPHONE_DYNAMIC
+                else -> {
+                    val distinctOptions = listOf(
+                        DEEP_NEBULA,
+                        SUNSET_DUNES,
+                        NORDIC_TWILIGHT,
+                        EMERALD_FOREST,
+                        OLED_DARK,
+                        FAIRPHONE_DYNAMIC,
+                        MINIMAL_WHITE
+                    )
+                    val hash = Math.abs(profileId.hashCode())
+                    distinctOptions[hash % distinctOptions.size]
+                }
+            }
+        }
     }
 }
 
 class WallpaperPreferences(context: Context) {
     private val prefs = context.getSharedPreferences("launcher_wallpaper_prefs", Context.MODE_PRIVATE)
 
+    // Observable counter to notify reactive state flows whenever a per-profile wallpaper changes
+    private val _wallpaperUpdates = MutableStateFlow(0)
+    val wallpaperUpdates: StateFlow<Int> = _wallpaperUpdates.asStateFlow()
+
+    // Active profile ID tracked by preferences
+    private var activeProfileId: String = ""
+
+    // Backward-compatibility flows
     private val _wallpaperType = MutableStateFlow(
         LauncherWallpaperType.fromId(prefs.getString(KEY_WALLPAPER_TYPE, LauncherWallpaperType.FAIRPHONE_DYNAMIC.id))
     )
@@ -58,29 +103,94 @@ class WallpaperPreferences(context: Context) {
     )
     val customImageUri: StateFlow<String?> = _customImageUri.asStateFlow()
 
-    fun setWallpaperType(type: LauncherWallpaperType) {
-        prefs.edit().putString(KEY_WALLPAPER_TYPE, type.id).apply()
+    fun setActiveProfileId(profileId: String) {
+        activeProfileId = profileId
+    }
+
+    private fun keyFor(baseKey: String, profileId: String): String {
+        return if (profileId.isBlank()) baseKey else "${baseKey}_$profileId"
+    }
+
+    // Per-profile getters
+    fun getWallpaperType(
+        profileId: String,
+        profileName: String = "",
+        profileIcon: String = ""
+    ): LauncherWallpaperType {
+        val specificKey = keyFor(KEY_WALLPAPER_TYPE, profileId)
+        val saved = prefs.getString(specificKey, null)
+        return if (saved != null) {
+            LauncherWallpaperType.fromId(saved)
+        } else {
+            // Assign distinct wallpaper per focus profile
+            LauncherWallpaperType.defaultWallpaperForProfile(profileId, profileName, profileIcon)
+        }
+    }
+
+    fun setWallpaperType(profileId: String, type: LauncherWallpaperType) {
+        val specificKey = keyFor(KEY_WALLPAPER_TYPE, profileId)
+        prefs.edit().putString(specificKey, type.id).apply()
         _wallpaperType.value = type
+        _wallpaperUpdates.value++
+    }
+
+    fun getBlurRadius(profileId: String): Float {
+        val specificKey = keyFor(KEY_BLUR_RADIUS, profileId)
+        return prefs.getFloat(specificKey, 0f)
+    }
+
+    fun setBlurRadius(profileId: String, radius: Float) {
+        val clamped = radius.coerceIn(0f, 30f)
+        val specificKey = keyFor(KEY_BLUR_RADIUS, profileId)
+        prefs.edit().putFloat(specificKey, clamped).apply()
+        _blurRadius.value = clamped
+        _wallpaperUpdates.value++
+    }
+
+    fun getDimAlpha(profileId: String): Float {
+        val specificKey = keyFor(KEY_DIM_ALPHA, profileId)
+        return prefs.getFloat(specificKey, 0f)
+    }
+
+    fun setDimAlpha(profileId: String, dim: Float) {
+        val clamped = dim.coerceIn(0f, 0.75f)
+        val specificKey = keyFor(KEY_DIM_ALPHA, profileId)
+        prefs.edit().putFloat(specificKey, clamped).apply()
+        _dimAlpha.value = clamped
+        _wallpaperUpdates.value++
+    }
+
+    fun getCustomImageUri(profileId: String): String? {
+        val specificKey = keyFor(KEY_CUSTOM_URI, profileId)
+        return prefs.getString(specificKey, null)
+    }
+
+    fun setCustomImageUri(profileId: String, uri: String?) {
+        val specificKey = keyFor(KEY_CUSTOM_URI, profileId)
+        prefs.edit().putString(specificKey, uri).apply()
+        _customImageUri.value = uri
+        if (uri != null) {
+            setWallpaperType(profileId, LauncherWallpaperType.CUSTOM_IMAGE)
+        } else {
+            _wallpaperUpdates.value++
+        }
+    }
+
+    // Global / fallback setters that use the current active profile if set
+    fun setWallpaperType(type: LauncherWallpaperType) {
+        setWallpaperType(activeProfileId, type)
     }
 
     fun setBlurRadius(radius: Float) {
-        val clamped = radius.coerceIn(0f, 30f)
-        prefs.edit().putFloat(KEY_BLUR_RADIUS, clamped).apply()
-        _blurRadius.value = clamped
+        setBlurRadius(activeProfileId, radius)
     }
 
     fun setDimAlpha(dim: Float) {
-        val clamped = dim.coerceIn(0f, 0.75f)
-        prefs.edit().putFloat(KEY_DIM_ALPHA, clamped).apply()
-        _dimAlpha.value = clamped
+        setDimAlpha(activeProfileId, dim)
     }
 
     fun setCustomImageUri(uri: String?) {
-        prefs.edit().putString(KEY_CUSTOM_URI, uri).apply()
-        _customImageUri.value = uri
-        if (uri != null) {
-            setWallpaperType(LauncherWallpaperType.CUSTOM_IMAGE)
-        }
+        setCustomImageUri(activeProfileId, uri)
     }
 
     companion object {

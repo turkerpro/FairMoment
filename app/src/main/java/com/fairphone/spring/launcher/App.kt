@@ -23,6 +23,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import org.koin.core.context.GlobalContext
 import org.koin.core.context.startKoin
 
 class App : Application(), KoinComponent {
@@ -42,11 +43,13 @@ class App : Application(), KoinComponent {
     override fun onCreate() {
         super.onCreate()
 
-        startKoin {
-            androidLogger()
-            androidContext(this@App)
-            androidLogger()
-            modules(koinModules)
+        if (GlobalContext.getOrNull() == null) {
+            startKoin {
+                androidLogger()
+                androidContext(this@App)
+                androidLogger()
+                modules(koinModules)
+            }
         }
         initApp(this)
     }

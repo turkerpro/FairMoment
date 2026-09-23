@@ -21,18 +21,17 @@ class SetActiveProfileUseCase(
     override suspend fun execute(params: String): Result<LauncherProfile> {
         return try {
             val currentActiveProfile = launcherProfileRepository.getActiveProfile().first()
-            zenNotificationManager.disableDnd(
-                zenRuleId = currentActiveProfile.zenRuleId,
-                name = currentActiveProfile.name,
-            )
+            if (currentActiveProfile.zenRuleId.isNotBlank()) {
+                zenNotificationManager.disableDnd(
+                    zenRuleId = currentActiveProfile.zenRuleId,
+                    name = currentActiveProfile.name,
+                )
+            }
 
             val newActiveProfile = launcherProfileRepository.getProfile(params).first()
-            zenNotificationManager.enableDnd(
-                zenRuleId = newActiveProfile.zenRuleId,
-                name = newActiveProfile.name,
-            )
+            // DND is NOT enabled by default. The phone remains in normal notification mode.
             launcherProfileRepository.setActiveProfile(params)
-            return Result.success(newActiveProfile)
+            Result.success(newActiveProfile)
         } catch (e: Exception) {
             Result.failure(e)
         }

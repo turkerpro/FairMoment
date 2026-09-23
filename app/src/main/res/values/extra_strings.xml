@@ -1,11 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="permissions_required">Permissions required</string>
-    <string name="do_not_disturb_access">Do Not Disturb access</string>
-    <string name="modify_system_settings">Modify system settings</string>
-    <string name="draw_over_other_apps">Draw over other apps</string>
-    <string name="permission_granted">Permission Granted</string>
-    <string name="permission_required">Permission Required</string>
+    <string name="permissions_required">Welcome &amp; Setup</string>
+    <string name="do_not_disturb_access">Do Not Disturb Access (Optional)</string>
+    <string name="modify_system_settings">System Settings</string>
+    <string name="draw_over_other_apps">Draw over other apps (Optional)</string>
+    <string name="permission_granted">Granted</string>
+    <string name="permission_required">Optional</string>
     <string name="done">Done</string>
-    <string name="grant">Grant</string>
+    <string name="grant">Enable</string>
+
+    <!-- Welcome & Onboarding -->
+    <string name="welcome_to_launcher">Welcome to FairMoment</string>
+    <string name="welcome_subtitle">A distraction-free, mindful home screen experience.</string>
+    <string name="feature_transparency_title">What to Expect Upfront</string>
+    <string name="feature_dnd_title">Do Not Disturb (DND)</string>
+    <string name="feature_dnd_desc">OFF by default. Your phone will continue ringing and receiving notifications normally. You can enable focus silencing anytime in Settings.</string>
+    <string name="feature_profiles_title">Focus Moments (Profiles)</string>
+    <string name="feature_profiles_desc">Keep only your chosen essential apps on your home screen during work or downtime to protect your focus.</string>
+    <string name="feature_privacy_title">100% Offline &amp; Private</string>
+    <string name="feature_privacy_desc">No data ever leaves your device. We do not alter your system settings without your permission.</string>
+    <string name="action_start_default_profile">Start with Default Profile</string>
+    <string name="action_start_default_profile_desc">Quickly start with the Essentials profile (DND is off, ready to use).</string>
+    <string name="action_customize_profile">Create My Own Profile</string>
+    <string name="action_customize_profile_desc">Choose a custom name, select allowed apps, and pick a color right now.</string>
+    <string name="optional_permissions_info">Optional Permissions</string>
+    <string name="optional_permissions_info_desc">FairMoment does not require system modifications. Do Not Disturb access is only needed if you explicitly choose to silence notifications during Moments.</string>
+
+    <!-- Moments Onboarding Sequence -->
+    <string name="onboarding_step_indicator">Step %1$d of %2$d: %3$s</string>
+    <string name="onboarding_step_intro">Concept</string>
+    <string name="onboarding_step_name">Name &amp; Icon</string>
+    <string name="onboarding_step_apps">Curate Apps</string>
+    <string name="onboarding_step_style">Atmosphere</string>
+    <string name="onboarding_step_ready">Ready</string>
+
+    <string name="moments_onboarding_title">Meet \'Moments\'</string>
+    <string name="moments_onboarding_subtitle">A mindful approach to your smartphone.</string>
+
+    <string name="moments_card_concept_title">What is a Moment?</string>
+    <string name="moments_card_concept_desc">Instead of a chaotic grid of 50+ apps vying for your attention, a Moment is an intentional home screen mode crafted for a specific part of your day—like Work, Focus, or Downtime.</string>
+
+    <string name="moments_card_curated_title">Curate What Truly Matters</string>
+    <string name="moments_card_curated_desc">Choose up to 4 essential apps to place front and center. All your other installed apps remain secure and accessible anytime in your full app drawer.</string>
+
+    <string name="moments_card_calm_title">Calm, Private &amp; Respectful</string>
+    <string name="moments_card_calm_desc">100% on-device and offline. We never push ads or force Do Not Disturb—your calls and messages arrive normally unless you choose to mute them.</string>
+
+    <string name="btn_define_first_moment">Define My First Moment</string>
+
+    <string name="step_name_title">Name Your First Moment</string>
+    <string name="step_name_subtitle">Give this profile an identity that reflects your state of mind.</string>
+    <string name="step_name_label">Moment Name</string>
+    <string name="step_name_helper">Tap the icon badge above to cycle symbols, or pick a quick suggestion below.</string>
+    <string name="preset_essentials">Essentials</string>
+    <string name="preset_focus">Focus</string>
+    <string name="preset_work">Work</string>
+    <string name="preset_mindful">Mindful</string>
+    <string name="preset_daily">Daily</string>
+
+    <string name="step_apps_title">Select Essential Apps</string>
+    <string name="step_apps_subtitle">Pick 1 to 4 apps to feature on your home screen.</string>
+    <string name="search_apps_hint">Search installed apps…</string>
+    <string name="apps_selected_count">%1$d of %2$d apps selected</string>
+    <string name="error_select_at_least_one">Please select at least 1 app to continue.</string>
+    <string name="error_max_apps_reached">You can select up to 4 apps for this Moment.</string>
+
+    <string name="step_style_title">Choose Atmosphere</string>
+    <string name="step_style_subtitle">Select a peaceful duotone gradient for this Moment.</string>
+
+    <string name="step_ready_title">Your Moment is Ready!</string>
+    <string name="step_ready_subtitle">Your first intentional home screen is configured.</string>
+    <string name="step_ready_desc">You can seamlessly switch between Moments or create more anytime right from your home screen indicator.</string>
+    <string name="btn_enter_fairmoment">Enter FairMoment</string>
+    <string name="btn_continue">Continue</string>
+    <string name="btn_back">Back</string>
 </resources>

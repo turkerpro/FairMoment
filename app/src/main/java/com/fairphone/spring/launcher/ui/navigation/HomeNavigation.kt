@@ -62,11 +62,12 @@ const val FADE_IN_DURATION = 200
 fun HomeNavigation(
     navController: NavHostController = rememberNavController(),
     showEntryAnimation: Boolean,
-    isContentVisible: Boolean
+    isContentVisible: Boolean,
+    startOnboarding: Boolean = false,
 ) {
     NavHost(
         navController = navController,
-        startDestination = Home,
+        startDestination = if (startOnboarding) OnBoarding else Home,
         enterTransition = { fadeIn(animationSpec = tween(FADE_IN_DURATION)) },
         exitTransition = { fadeOut(animationSpec = tween(FADE_IN_DURATION)) }
     ) {
@@ -216,7 +217,13 @@ fun HomeNavigation(
             ) {
                 OnBoardingScreen(
                     onBoardingClose = {
-                        navController.navigateUp()
+                        if (navController.previousBackStackEntry != null) {
+                            navController.navigateUp()
+                        } else {
+                            navController.navigate(Home) {
+                                popUpTo(OnBoarding) { inclusive = true }
+                            }
+                        }
                     }
                 )
             }

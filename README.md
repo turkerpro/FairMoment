@@ -1,74 +1,105 @@
-# FairMoment Launcher
+# 🌿 Spring Launcher (Fairphone Moments)
 
-<p align="center">
-  <strong>A mindful, customizable, and distraction-free Android Launcher.</strong><br>
-  Built with Kotlin & Jetpack Compose • Designed for Digital Wellbeing • 100% Offline-First
-</p>
+An intentional, calm, and distraction-free Android launcher designed to foster digital wellbeing. Powered by **Jetpack Compose**, **Material 3**, and modern Android architecture.
 
 ---
 
-## 📖 About FairMoment
+## 📸 Visual Showcase & Screenshots
 
-**FairMoment** is a modern Android home screen launcher focused on intentional phone usage, clarity, and elegant personalization. It combines distraction-free "Moments" (Zen/Focus modes) with an iOS-style widget ecosystem, smart stacks, native Android app widget hosting, and a categorized app library.
+### 🌟 1. Guided First-Launch Onboarding ("Moments")
+Experience a calm, 5-step onboarding journey that introduces the concept of **Moments** and guides you through tailoring your initial focused profile before entering the home screen.
+
+| Step 0: Meet Moments | Step 1: Name & Icon |
+|:---:|:---:|
+| <img src="screenshots/screenshot_1.png" width="360" alt="Meet Moments Introduction" /> | <img src="screenshots/screenshot_2.png" width="360" alt="Define Name and Icon" /> |
+| **Mindful Phone Usage**<br/>Introduces the philosophy of context-aware profiles and offline-first privacy. | **Identity & Presets**<br/>Choose a moment name (e.g. Focus, Work, Evening) and custom iconography with quick suggestions. |
+
+| Step 2: Curate Essential Apps | Step 3: Choose Atmosphere |
+|:---:|:---:|
+| <img src="screenshots/screenshot_3.png" width="360" alt="Curate Essential Apps" /> | <img src="screenshots/screenshot_4.png" width="360" alt="Choose Atmosphere" /> |
+| **Distraction-Free Dock**<br/>Select only the tools needed for this specific state of mind, with real-time app search. | **Harmonious Color Gradients**<br/>Select custom background tones, ambient palettes, and accent gradients. |
+
+| Step 4: Summary & Ready to Launch |
+|:---:|
+| <img src="screenshots/screenshot_5.png" width="360" alt="Summary and Ready" /> |
+| **Ready for Focused Living**<br/>Review your curated moment profile and step straight into your newly personalized sanctuary. |
 
 ---
 
-## ⚖️ Attribution & Open Source License
+### 📱 2. Core Experience: Home Screen, App Library & Widgets
 
-This software is an independent derivative work based on the open-source **Fairphone Moments** launcher, originally developed by **FairPhone B.V.**
-
-- **Original Project:** Fairphone Moments (by FairPhone B.V.)
-- **License:** [European Union Public Licence v. 1.2 (EUPL-1.2)](LICENSE)
-- **Modifications & Enhancements:**
-  - Integrated iOS-style Smart Stack & interactive Widget Gallery.
-  - Complete Android `AppWidgetHost` & `AppWidgetManager` integration allowing any 3rd-party installed app widget on the home screen.
-  - High-performance in-memory caching for installed apps, icons (`LruCache`), and widget metadata to eliminate UI frame drops.
-  - Quick Notes and customizable feed tiles with persistent memory caching.
-  - Custom wallpaper background engine supporting solid tones, gradients, and custom gallery photos with dynamic Dim & Blur adjustments.
-  - Minute-aligned CPU wakeups reducing background battery and CPU consumption.
-
-*Disclaimer: Fairphone is a registered trademark of Fairphone B.V. FairMoment is an independent community project and is neither endorsed by nor directly affiliated with Fairphone B.V.*
+| Minimalist Home Screen | iOS-Style App Library | Today Widgets & Smart Stack |
+|:---:|:---:|:---:|
+| <img src="screenshots/screenshot_6.png" width="280" alt="Minimalist Home Screen" /> | <img src="screenshots/screenshot_7.png" width="280" alt="iOS App Library" /> | <img src="screenshots/screenshot_8.png" width="280" alt="Today Widgets" /> |
+| **Active Moment Pill & Clock**<br/>Calm layout featuring customized typography, dynamic date, and quick Moment switcher. | **Automatic Smart Categories**<br/>Organized folders (Suggestions, Social, Utilities, Productivity) with instant search. | **Glanceable Widgets**<br/>Live weather, calendar agenda, quick scratchpad, fitness stats, and digital wellbeing screen time. |
 
 ---
 
 ## ✨ Key Features
 
-- **🧘 Moments (Focus & Zen Profiles):** Create distinct home screen modes (Work, Essentials, Zen, Social) with customized allowed apps and contacts.
-- **📱 Smart Stack & Widgets:**
-  - Multi-card stackable widgets with vertical swipe interaction.
-  - Battery, Screen Time, Weather, Calendar, Quick Notes, Daily Focus, and News/Feed cards.
-  - **Native 3rd-party Widget Support:** Host any installed Android application's widget seamlessly inside stacks or standalone.
-- **📂 Categorized App Library:**
-  - Automated categories (Productivity, Social, Media, Tools, etc.)
-  - Real-time instant search by app name or package.
-- **🎨 Wallpaper & Theming:**
-  - Material You dynamic coloring support (Android 12+).
-  - Custom wallpapers with real-time Dim Alpha and Blur controls.
-- **🔒 Private & Offline-First:**
-  - No ads, no third-party tracking, no telemetries, no data leaves your device.
+- **🎯 Contextual "Moments":** Switch seamlessly between work, leisure, study, and recharge modes. Each moment only displays the apps and contacts you need.
+- **🌱 Distraction-Free Philosophy:** Reduces notification anxiety and compulsive app-opening with an intentional design language.
+- **📂 Smart App Library:** iOS-inspired folder categorization automatically groups your applications into intuitive drawers with search.
+- **📊 Today Widget Hub:** Quick-access widgets for daily schedule, weather forecast, quick notes, and screen-time monitoring right at your fingertips (swipe right from home).
+- **🎨 Deep Customization:** Custom clock fonts (Bricolage, DM Sans, etc.), wallpaper blurring, dimming levels, and personalized gradient color themes.
+- **🔒 100% Offline & Private:** Built with zero telemetry and complete on-device local storage.
 
 ---
 
-## 🛠️ Building the Project
+## 🛠️ Architecture & Tech Stack
 
-### Prerequisites
-- Android Studio Ladybug / Meerkat or newer
-- JDK 17 / 21
-- Android SDK Platform 36 (Android 15/16)
+- **UI Framework:** [Jetpack Compose](https://developer.android.com/jetpack/compose) with Material Design 3 (M3)
+- **Language:** 100% Kotlin with Coroutines & Flow
+- **Dependency Injection:** [Koin](https://insert-koin.io/)
+- **Data Persistence:** Android DataStore Preferences & Protocol Buffers
+- **Screenshot Verification:** [Roborazzi](https://github.com/takahirom/roborazzi) + [Robolectric](https://robolectric.org/)
 
-### Compile Debug APK
+---
+
+## 📂 Project Directory Structure
+
+```
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/fairphone/spring/launcher/
+│   │   │   │   ├── data/            # Repositories, models, preferences
+│   │   │   │   ├── di/              # Koin dependency injection modules
+│   │   │   │   ├── domain/          # Use cases & business logic
+│   │   │   │   └── ui/              # Compose screens, widgets & themes
+│   │   │   └── res/                 # Vector drawables, strings, colors
+│   │   └── test/                    # Robolectric & Roborazzi screenshot tests
+├── screenshots/                     # Application screenshots for GitHub & docs
+│   ├── screenshot_1.png             # Step 0: Onboarding Concept
+│   ├── screenshot_2.png             # Step 1: Name & Icon
+│   ├── screenshot_3.png             # Step 2: Curate Apps
+│   ├── screenshot_4.png             # Step 3: Atmosphere
+│   ├── screenshot_5.png             # Step 4: Ready Summary
+│   ├── screenshot_6.png             # Minimalist Home Screen
+│   ├── screenshot_7.png             # iOS App Library
+│   └── screenshot_8.png             # Today Widgets
+└── README.md
+```
+
+---
+
+## 🚀 Building & Testing
+
+To compile the application:
 ```bash
 ./gradlew assembleDebug
 ```
 
-### Build Android App Bundle (AAB) for Google Play
+To run unit and Roborazzi screenshot verification tests:
 ```bash
-./gradlew bundleRelease
+./gradlew testDebugUnitTest
+```
+
+To re-record screenshots:
+```bash
+./gradlew recordRoborazziDebug
 ```
 
 ---
 
-## 📄 License
-
-This project is licensed under the **European Union Public Licence (EUPL-1.2)**.  
-See the [LICENSE](LICENSE) file for the full license text.
+*Fairphone Spring Launcher — Designed for peace of mind.*

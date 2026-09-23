@@ -32,13 +32,7 @@ class InitializeSpringLauncherUseCase(
             return Result.failure(IllegalStateException("App already initialized"))
         }
 
-        if (context.isDoNotDisturbAccessGranted()) {
-            val result = createDefaultProfile(context)
-
-            return result
-        } else {
-            return Result.failure(IllegalStateException("DND permission not granted"))
-        }
+        return createDefaultProfile(context)
     }
 
     private suspend fun createDefaultProfile(context: Context): Result<Unit> {

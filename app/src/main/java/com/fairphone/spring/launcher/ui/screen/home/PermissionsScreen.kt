@@ -45,12 +45,10 @@ fun PermissionsScreen(
         context.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
     var canDnd by remember { mutableStateOf(false) }
-    var canWrite by remember { mutableStateOf(false) }
     var canOverlay by remember { mutableStateOf(false) }
 
     fun refresh() {
         canDnd = notificationManager.isNotificationPolicyAccessGranted
-        canWrite = Settings.System.canWrite(context)
         canOverlay = Settings.canDrawOverlays(context)
     }
 
@@ -96,22 +94,6 @@ fun PermissionsScreen(
                     context.startActivity(
                         Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS)
                             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    )
-                } catch (e: Exception) {
-                    // Fallback
-                }
-            }
-
-            PermissionRow(
-                title = stringResource(R.string.modify_system_settings),
-                granted = canWrite
-            ) {
-                try {
-                    context.startActivity(
-                        Intent(
-                            Settings.ACTION_MANAGE_WRITE_SETTINGS,
-                            "package:${context.packageName}".toUri()
-                        ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     )
                 } catch (e: Exception) {
                     // Fallback

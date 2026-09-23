@@ -31,6 +31,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -38,12 +39,15 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.lifecycleScope
+import com.fairphone.spring.launcher.data.prefs.AppPrefs
+import com.fairphone.spring.launcher.data.prefs.UsageMode
 import com.fairphone.spring.launcher.ui.navigation.HomeNavigation
-import com.fairphone.spring.launcher.ui.screen.home.PermissionsScreen
+import com.fairphone.spring.launcher.ui.screen.onboarding.FirstLaunchOnboardingScreen
 import com.fairphone.spring.launcher.ui.theme.SpringLauncherTheme
 import com.fairphone.spring.launcher.util.Constants
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 
 private const val ON_FINISH_DELAY = 400L
 private const val SHOW_HOME_SCREEN_DELAY = 100L
@@ -70,17 +74,7 @@ class SpringLauncherHomeActivity : ComponentActivity() {
     }
 
     private val isContentVisibleState = mutableStateOf(false)
-
-    private val permissionRefreshTrigger = mutableIntStateOf(0)
-
-    fun hasAllRequiredPermissions(context: Context): Boolean {
-        val notificationManager =
-            context.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-
-        return notificationManager.isNotificationPolicyAccessGranted &&
-                Settings.System.canWrite(context) &&
-                Settings.canDrawOverlays(context)
-    }
+    private val appPrefs: AppPrefs by inject()
 
     @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,21 +88,20 @@ class SpringLauncherHomeActivity : ComponentActivity() {
         setContent {
             CompositionLocalProvider {
                 SpringLauncherTheme {
-                    var hasPermissions by rememberSaveable { mutableStateOf(false) }
-                    var bypassPermissions by rememberSaveable { mutableStateOf(false) }
+                    val coroutineScope = rememberCoroutineScope()
+                    var isFirstTimeUser by rememberSaveable { mutableStateOf<Boolean?>(null) }
 
-                    // Re-check whenever onResume() happens
-                    LaunchedEffect(permissionRefreshTrigger.intValue) {
-                        hasPermissions = hasAllRequiredPermissions(this@SpringLauncherHomeActivity)
+                    LaunchedEffect(Unit) {
+                        isFirstTimeUser = appPrefs.isFirstTimeUse()
                     }
 
-                    if (!hasPermissions && !bypassPermissions) {
-                        PermissionsScreen(
-                            context = this@SpringLauncherHomeActivity,
-                            onContinue = { bypassPermissions = true }
+                    if (isFirstTimeUser == true) {
+                        FirstLaunchOnboardingScreen(
+                            onOnboardingFinished = {
+                                isFirstTimeUser = false
+                            }
                         )
-                    } else {
-                        // TODO: Move compose code to a separate composable
+                    } else if (isFirstTimeUser == false) {
                         /**
                          * These two boolean flags control:
                          * - Triggering and synchronization of a Compose animation.
@@ -131,12 +124,13 @@ class SpringLauncherHomeActivity : ComponentActivity() {
                                 .background(
                                     if (showEntryAnimation || !isContentVisible)
                                         androidx.compose.ui.graphics.Color.Transparent
-                                    else MaterialTheme.colorScheme.background
+                                     else MaterialTheme.colorScheme.background
                                 )
                         ) {
                             HomeNavigation(
                                 showEntryAnimation = showEntryAnimation,
-                                isContentVisible = isContentVisible
+                                isContentVisible = isContentVisible,
+                                startOnboarding = false
                             )
                         }
                     }
@@ -174,7 +168,6 @@ class SpringLauncherHomeActivity : ComponentActivity() {
             onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
         }
         hideGestureBar()
-        permissionRefreshTrigger.value++
     }
 
     override fun onPause() {

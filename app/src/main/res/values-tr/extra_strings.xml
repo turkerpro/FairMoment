@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permissions_required">Kurulum ve Başlangıç</string>
+    <string name="do_not_disturb_access">Rahatsız Etmeyin Erişimi (İsteğe Bağlı)</string>
+    <string name="modify_system_settings">Sistem Ayarları</string>
+    <string name="draw_over_other_apps">Diğer Uygulamaların Üzerinde Göster (İsteğe Bağlı)</string>
+    <string name="permission_granted">İzin Verildi</string>
+    <string name="permission_required">İsteğe Bağlı</string>
+    <string name="done">Tamam</string>
+    <string name="grant">Etkinleştir</string>
+
+    <!-- Welcome & Onboarding -->
+    <string name="welcome_to_launcher">FairMoment\'e Hoş Geldiniz</string>
+    <string name="welcome_subtitle">Dikkatinizi dağıtmayan, sade ve huzurlu bir ana ekran deneyimi.</string>
+    <string name="feature_transparency_title">Nelerle Karşılaşacaksınız?</string>
+    <string name="feature_dnd_title">Rahatsız Etmeme (DND)</string>
+    <string name="feature_dnd_desc">Varsayılan olarak KAPALIDIR. Aramalarınız ve bildirimleriniz asla kesilmez. İleride isterseniz odak anları için Ayarlar\'dan açabilirsiniz.</string>
+    <string name="feature_profiles_title">Odak Profilleri (Moments)</string>
+    <string name="feature_profiles_desc">Çalışırken veya dinlenirken ana ekranınızda sadece izin verdiğiniz temel uygulamaları tutarak dikkatinizi korur.</string>
+    <string name="feature_privacy_title">%100 Çevrimdışı ve Gizli</string>
+    <string name="feature_privacy_desc">Hiçbir kişisel veri cihazınızdan çıkmaz. Sistem ayarlarınıza zorla müdahale edilmez.</string>
+    <string name="action_start_default_profile">Varsayılan Profil ile Başla</string>
+    <string name="action_start_default_profile_desc">Temel uygulamalarınızla hemen ana ekrana geçin (Rahatsız etme modu kapalıdır).</string>
+    <string name="action_customize_profile">İlk Profilimi Şimdi Oluştur</string>
+    <string name="action_customize_profile_desc">Profilinizin adını, uygulamalarını ve rengini şimdi belirleyin.</string>
+    <string name="optional_permissions_info">İsteğe Bağlı İzinler Hakkında</string>
+    <string name="optional_permissions_info_desc">FairMoment sistem ayarlarınızı zorunlu olarak değiştirmez. Rahatsız Etmeyin izni yalnızca odak anlarında bildirimleri sessize almak isterseniz kullanılır.</string>
+
+    <!-- Moments Onboarding Sequence -->
+    <string name="onboarding_step_indicator">Adım %1$d / %2$d: %3$s</string>
+    <string name="onboarding_step_intro">Konsept</string>
+    <string name="onboarding_step_name">İsim ve Simge</string>
+    <string name="onboarding_step_apps">Uygulama Seçimi</string>
+    <string name="onboarding_step_style">Atmosfer</string>
+    <string name="onboarding_step_ready">Hazır</string>
+
+    <string name="moments_onboarding_title">\'Moments\' ile Tanışın</string>
+    <string name="moments_onboarding_subtitle">Akıllı telefonunuz için bilinçli ve sade bir yaklaşım.</string>
+
+    <string name="moments_card_concept_title">Moment Nedir?</string>
+    <string name="moments_card_concept_desc">Dikkatinizi dağıtan onlarca uygulamanın oluşturduğu karmaşık bir ızgara yerine, Moment günün belirli bir bölümü (İş, Odak, Dinlenme vb.) için tasarlanmış amaca yönelik bir alandır.</string>
+
+    <string name="moments_card_curated_title">Önemli Olanları Seçin</string>
+    <string name="moments_card_curated_desc">Bu odak anı için ana ekranınızda yer alacak en fazla 4 temel uygulama belirleyin. Diğer tüm uygulamalarınız dilediğiniz an çekmecenizde güvenle erişilebilir kalır.</string>
+
+    <string name="moments_card_calm_title">Huzurlu, Gizli ve Saygılı</string>
+    <string name="moments_card_calm_desc">Tamamen cihazınızda çalışır, hiçbir veri toplamaz. Siz istemediğiniz sürece aramalarınız ve bildirimleriniz asla kesilmez.</string>
+
+    <string name="btn_define_first_moment">İlk Momentimi Oluştur</string>
+
+    <string name="step_name_title">İlk Momentinizi Adlandırın</string>
+    <string name="step_name_subtitle">Bu profile amacınızı yansıtan bir isim ve simge verin.</string>
+    <string name="step_name_label">Moment Adı</string>
+    <string name="step_name_helper">Simgeyi değiştirmek için yukarıdaki rozete dokunun veya hazır önerilerden birini seçin.</string>
+    <string name="preset_essentials">Temel</string>
+    <string name="preset_focus">Odak</string>
+    <string name="preset_work">İş</string>
+    <string name="preset_mindful">Farkındalık</string>
+    <string name="preset_daily">Günlük</string>
+
+    <string name="step_apps_title">Temel Uygulamaları Belirleyin</string>
+    <string name="step_apps_subtitle">Ana ekranınızda yer alacak 1 ila 4 uygulama seçin.</string>
+    <string name="search_apps_hint">Uygulamalarda ara…</string>
+    <string name="apps_selected_count">%1$d / %2$d uygulama seçildi</string>
+    <string name="error_select_at_least_one">Devam etmek için lütfen en az 1 uygulama seçin.</string>
+    <string name="error_max_apps_reached">Bir Moment için en fazla 4 uygulama seçilebilir.</string>
+
+    <string name="step_style_title">Atmosferinizi Seçin</string>
+    <string name="step_style_subtitle">Gününüzü sakinleştiren bir renk paleti belirleyin.</string>
+
+    <string name="step_ready_title">Momentiniz Hazır!</string>
+    <string name="step_ready_subtitle">İlk kişisel odak alanınızı oluşturdunuz.</string>
+    <string name="step_ready_desc">Ana ekrandaki gösterge düğmesinden istediğiniz zaman yeni Momentler ekleyebilir veya aralarında geçiş yapabilirsiniz.</string>
+    <string name="btn_enter_fairmoment">FairMoment\'i Başlat</string>
+    <string name="btn_continue">Devam Et</string>
+    <string name="btn_back">Geri</string>
+</resources>
